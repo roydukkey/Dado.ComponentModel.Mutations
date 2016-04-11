@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A6F46F0-B703-45BC-AB96-E649C21C7879}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		CONTRIBUTING.md = CONTRIBUTING.md
+		global.json = global.json
+		LICENSE = LICENSE
+		NuGet.config = NuGet.config
+		README.md = README.md
+		Settings.StyleCop = Settings.StyleCop
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "src", "src\src.xproj", "{4760D976-3292-4CB9-B9FC-3A394D287656}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E89D5C60-2ADE-4CF7-867D-4D3DE8AD23CF}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\CaseOptions.md = Documentation\CaseOptions.md
+		Documentation\IMutableObject.md = Documentation\IMutableObject.md
+		Documentation\README.md = Documentation\README.md
+		Documentation\TrimOptions.md = Documentation\TrimOptions.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", "{9AA0FD0E-80EF-457B-8BC8-19A3F53FBB98}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Attributes\EnsureCaseAttribute.md = Documentation\Attributes\EnsureCaseAttribute.md
+		Documentation\Attributes\EnsureNumericAttribute.md = Documentation\Attributes\EnsureNumericAttribute.md
+		Documentation\Attributes\MutationAttribute.md = Documentation\Attributes\MutationAttribute.md
+		Documentation\Attributes\RegexReplaceAttribute.md = Documentation\Attributes\RegexReplaceAttribute.md
+		Documentation\Attributes\ReplaceAttribute.md = Documentation\Attributes\ReplaceAttribute.md
+		Documentation\Attributes\TrimAttribute.md = Documentation\Attributes\TrimAttribute.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{B1EA5C59-0437-4374-A5C2-C2E76F350478}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Context\IMutationContext.md = Documentation\Context\IMutationContext.md
+		Documentation\Context\MutationContext.md = Documentation\Context\MutationContext.md
+		Documentation\Context\Mutator.md = Documentation\Context\Mutator.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4760D976-3292-4CB9-B9FC-3A394D287656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4760D976-3292-4CB9-B9FC-3A394D287656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4760D976-3292-4CB9-B9FC-3A394D287656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4760D976-3292-4CB9-B9FC-3A394D287656}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9AA0FD0E-80EF-457B-8BC8-19A3F53FBB98} = {E89D5C60-2ADE-4CF7-867D-4D3DE8AD23CF}
+		{B1EA5C59-0437-4374-A5C2-C2E76F350478} = {E89D5C60-2ADE-4CF7-867D-4D3DE8AD23CF}
+	EndGlobalSection
+EndGlobal

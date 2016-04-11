@@ -1,0 +1,39 @@
+﻿{
+	"version": "0.1.0-beta-1",
+	"description": "Provides attritubes that are used to help ensure data integrity for objects used as data sources.",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/roydukkey/System.ComponentModel.Mutations"
+	},
+
+	"authors": [ "roydukkey" ],
+
+	"frameworks": {
+		"netstandard1.4": {
+			"dependencies": {
+				"System.ComponentModel": "4.0.0",
+				"System.Linq": "4.0.0",
+				"System.Linq.Expressions": "4.0.10",
+				"System.Reflection.Extensions": "4.0.0",
+				"System.Text.RegularExpressions": "4.0.10"
+			},
+			"imports": [
+				"dotnet5.5"
+			],
+			"compilationOptions": {
+				"define": [ "FEATURE_CORECLR" ]
+			}
+		},
+		"net461": {
+			"dependencies": {
+				"Microsoft.TargetingPack.NETFramework.v4.6.1": "1.0.1"
+			}
+		}
+	},
+
+	"compilationOptions": {
+		"allowUnsafe": true,
+		"keyFile": "../../_tools/roydukkey.snk",
+		"xmlDoc": true
+	}
+}

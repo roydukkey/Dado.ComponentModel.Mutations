@@ -1,0 +1,22 @@
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# Package Managers
+.nuget/
+nuget.exe
+bower_components/
+node_modules/
+
+# Build Artifacts
+.vs/
+artifacts/
+[Oo]bj/
+[Bb]in/
+*launchSettings.json
+*.lock.json
+*.cache
+
+# Other
+*DS_Store
