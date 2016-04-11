@@ -51,7 +51,7 @@ Now, when `Mutator.Mutate(context);` is executed the value of `User.UserName` wi
 
 ## Further Development
 
-This project is still initial development. APIs have been submitted to dotnet/corefx for review and are likely to change.
+This project is still initial development. APIs have been submitted to [dotnet/corefx#7660](https://www.github.com/dotnet/corefx/issues/7660) for review and are likely to change.
 
 Unit testing will be provided after a stable RTM has been published for .NET Core.
 
