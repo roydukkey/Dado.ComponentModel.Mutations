@@ -165,7 +165,7 @@ namespace System.ComponentModel.DataMutations
 
 		#endregion Mutate Property
 
-		#region Internal Methods
+		#region Private Methods
 
 		/// <summary>
 		///		Mutates the specified value against the current context and the specified <see cref="MutationAttribute" />s.
@@ -290,10 +290,6 @@ namespace System.ComponentModel.DataMutations
 
 			return instance;
 		}
-
-		#endregion Internal Methods
-
-		#region Private Methods
 
 		/// <summary>
 		///		Gets the corresponding <see cref="PropertyInfo" /> from an <see cref="Expression" />.
