@@ -11,11 +11,11 @@
 #### Attributes
 
 - [MutationAttribute](Attributes/MutationAttribute.md 'System.ComponentModel.DataMutations.MutationAttribute')
-- [EnsureCaseAttribute](Attributes/EnsureCaseAttribute.md 'System.ComponentModel.DataMutations.EnsureCaseAttribute')
-  - [CaseOptions](CaseOptions.md 'System.ComponentModel.DataMutations.CaseOptions')
 - [EnsureNumericAttribute](Attributes/EnsureNumericAttribute.md 'System.ComponentModel.DataMutations.EnsureNumericAttribute')
 - [RegexReplaceAttribute](Attributes/RegexReplaceAttribute.md 'System.ComponentModel.DataMutations.RegexReplaceAttribute')
 - [ReplaceAttribute](Attributes/ReplaceAttribute.md 'System.ComponentModel.DataMutations.ReplaceAttribute')
+- [ToLowerAttribute](Attributes/ToLowerAttribute.md 'System.ComponentModel.DataMutations.ToLowerAttribute')
+- [ToUpperAttribute](Attributes/ToUpperAttribute.md 'System.ComponentModel.DataMutations.ToUpperAttribute')
 - [TrimAttribute](Attributes/TrimAttribute.md 'System.ComponentModel.DataMutations.TrimAttribute')
   - [TrimOptions](TrimOptions.md 'System.ComponentModel.DataMutations.TrimOptions')
 

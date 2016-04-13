@@ -37,7 +37,7 @@ using System.ComponentModel.DataMutations;
 public class User
 {
 	[
-		EnsureCase(CaseOptions.Lower),
+		ToLower,
 		RegexReplace(@"[^a-z0-9._]")
 	]
 	public string UserName { get; set; }

@@ -20,7 +20,6 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "src", "src\src.xproj", "{47
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E89D5C60-2ADE-4CF7-867D-4D3DE8AD23CF}"
 	ProjectSection(SolutionItems) = preProject
-		Documentation\CaseOptions.md = Documentation\CaseOptions.md
 		Documentation\IMutableObject.md = Documentation\IMutableObject.md
 		Documentation\README.md = Documentation\README.md
 		Documentation\TrimOptions.md = Documentation\TrimOptions.md
@@ -28,11 +27,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", "{9AA0FD0E-80EF-457B-8BC8-19A3F53FBB98}"
 	ProjectSection(SolutionItems) = preProject
-		Documentation\Attributes\EnsureCaseAttribute.md = Documentation\Attributes\EnsureCaseAttribute.md
 		Documentation\Attributes\EnsureNumericAttribute.md = Documentation\Attributes\EnsureNumericAttribute.md
 		Documentation\Attributes\MutationAttribute.md = Documentation\Attributes\MutationAttribute.md
 		Documentation\Attributes\RegexReplaceAttribute.md = Documentation\Attributes\RegexReplaceAttribute.md
 		Documentation\Attributes\ReplaceAttribute.md = Documentation\Attributes\ReplaceAttribute.md
+		Documentation\Attributes\ToLowerAttribute.md = Documentation\Attributes\ToLowerAttribute.md
+		Documentation\Attributes\ToUpperAttribute.md = Documentation\Attributes\ToUpperAttribute.md
 		Documentation\Attributes\TrimAttribute.md = Documentation\Attributes\TrimAttribute.md
 	EndProjectSection
 EndProject
