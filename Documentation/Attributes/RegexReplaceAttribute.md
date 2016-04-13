@@ -40,7 +40,7 @@ The *Replacement* property specifies the string that is to replace each match in
 | Name | Description |
 | ---- | ----------- |
 | [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
-| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implement the mutation logic for this RegexReplaceAttribute. |
+| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this RegexReplaceAttribute. |
 
 
 <a name='RegexReplaceAttributeStringStringArray'></a>
@@ -121,7 +121,7 @@ public string Replacement { get; set; }
 <a name='MutateValueObjectIMutationContext'></a>
 ## MutateValue(Object, IMutationContext)
 
-Implement the mutation logic for this *RegexReplaceAttribute*.
+Implements the mutation logic for this *RegexReplaceAttribute*.
 
 #### Syntax
 

@@ -23,7 +23,7 @@ namespace System.ComponentModel.DataMutations
 		#region Protected Methods
 
 		/// <summary>
-		///		Implement the mutation logic for this <see cref="ToLowerAttribute" />.
+		///		Implements the mutation logic for this <see cref="ToLowerAttribute" />.
 		/// </summary>
 		/// <param name="value">The value to mutate.</param>
 		/// <param name="context">Describes the <paramref name="value" /> being mutated and provides services and context for mutation.</param>

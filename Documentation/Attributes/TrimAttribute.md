@@ -40,7 +40,7 @@ If *Characters* is **null** or an empty array, mutation removes any leading or t
 | Name | Description |
 | ---- | ----------- |
 | [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
-| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implement the mutation logic for this TrimAttribute. |
+| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this TrimAttribute. |
 
 
 <a name='TrimAttributeCharArray'></a>
@@ -101,7 +101,7 @@ public TrimOptions Direction { get; set; }
 <a name='MutateValueObjectIMutationContext'></a>
 ## MutateValue(Object, IMutationContext)
 
-Implement the mutation logic for this *TrimAttribute*.
+Implements the mutation logic for this *TrimAttribute*.
 
 #### Syntax
 

@@ -70,7 +70,7 @@ namespace System.ComponentModel.DataMutations
 		#region Protected Methods
 
 		/// <summary>
-		///		Implement the mutation logic for this <see cref="TrimAttribute" />.
+		///		Implements the mutation logic for this <see cref="TrimAttribute" />.
 		/// </summary>
 		/// <param name="value">The value to mutate.</param>
 		/// <param name="context">Describes the <paramref name="value" /> being mutated and provides services and context for mutation.</param>

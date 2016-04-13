@@ -26,7 +26,7 @@ public class ToNumericAttribute : MutationAttribute
 | Name | Description |
 | ---- | ----------- |
 | [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
-| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implement the mutation logic for this ToNumericAttribute. |
+| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToNumericAttribute. |
 
 
 <a name='PreserveFloatingPoint'></a>
@@ -65,7 +65,7 @@ public bool PreserveSign { get; set; }
 <a name='MutateValueObjectIMutationContext'></a>
 ## MutateValue(Object, IMutationContext)
 
-Implement the mutation logic for this *ToNumericAttribute*.
+Implements the mutation logic for this *ToNumericAttribute*.
 
 #### Syntax
 
