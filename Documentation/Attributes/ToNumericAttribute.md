@@ -1,4 +1,4 @@
-# EnsureNumericAttribute [..](../README.md#documentation-index 'Documentation Index')
+# ToNumericAttribute [..](../README.md#documentation-index 'Documentation Index')
 
 Used to mutated a string to allow only numeric characters.
 
@@ -9,7 +9,7 @@ Used to mutated a string to allow only numeric characters.
 
 ```csharp
 [AttributeUsage(AttributeTargets.Property)]
-public class EnsureNumericAttribute : MutationAttribute
+public class ToNumericAttribute : MutationAttribute
 ```
 
 
@@ -26,7 +26,7 @@ public class EnsureNumericAttribute : MutationAttribute
 | Name | Description |
 | ---- | ----------- |
 | [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
-| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implement the mutation logic for this EnsureNumericAttribute. |
+| [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implement the mutation logic for this ToNumericAttribute. |
 
 
 <a name='PreserveFloatingPoint'></a>
@@ -65,7 +65,7 @@ public bool PreserveSign { get; set; }
 <a name='MutateValueObjectIMutationContext'></a>
 ## MutateValue(Object, IMutationContext)
 
-Implement the mutation logic for this *EnsureNumericAttribute*.
+Implement the mutation logic for this *ToNumericAttribute*.
 
 #### Syntax
 

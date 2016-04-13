@@ -9,7 +9,7 @@ namespace System.ComponentModel.DataMutations
 	///		Used to mutated a string to allow only numeric characters.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property)]
-	public class EnsureNumericAttribute : MutationAttribute
+	public class ToNumericAttribute : MutationAttribute
 	{
 		#region Properties
 
@@ -28,7 +28,7 @@ namespace System.ComponentModel.DataMutations
 		#region Protected Methods
 
 		/// <summary>
-		///		Implement the mutation logic for this <see cref="EnsureNumericAttribute" />.
+		///		Implement the mutation logic for this <see cref="ToNumericAttribute" />.
 		/// </summary>
 		/// <param name="value">The value to mutate.</param>
 		/// <param name="context">Describes the <paramref name="value" /> being mutated and provides services and context for mutation.</param>

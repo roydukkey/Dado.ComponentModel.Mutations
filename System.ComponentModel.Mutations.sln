@@ -27,11 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", "{9AA0FD0E-80EF-457B-8BC8-19A3F53FBB98}"
 	ProjectSection(SolutionItems) = preProject
-		Documentation\Attributes\EnsureNumericAttribute.md = Documentation\Attributes\EnsureNumericAttribute.md
 		Documentation\Attributes\MutationAttribute.md = Documentation\Attributes\MutationAttribute.md
 		Documentation\Attributes\RegexReplaceAttribute.md = Documentation\Attributes\RegexReplaceAttribute.md
 		Documentation\Attributes\ReplaceAttribute.md = Documentation\Attributes\ReplaceAttribute.md
 		Documentation\Attributes\ToLowerAttribute.md = Documentation\Attributes\ToLowerAttribute.md
+		Documentation\Attributes\ToNumericAttribute.md = Documentation\Attributes\ToNumericAttribute.md
 		Documentation\Attributes\ToUpperAttribute.md = Documentation\Attributes\ToUpperAttribute.md
 		Documentation\Attributes\TrimAttribute.md = Documentation\Attributes\TrimAttribute.md
 	EndProjectSection
