@@ -94,7 +94,7 @@ namespace System.ComponentModel.DataMutations
 				TypeStoreItem item = null;
 
 				if (!_typeStoreItems.TryGetValue(type, out item)) {
-					// use CustomAttributeExtensions.GetCustomAttributes() to get inherited attributes as well as direct ones
+					// Use CustomAttributeExtensions.GetCustomAttributes() to get inherited attributes as well as direct ones
 					var attributes = CustomAttributeExtensions.GetCustomAttributes(type.GetTypeInfo(), true);
 
 					_typeStoreItems[type] = item = new TypeStoreItem(type, attributes);
