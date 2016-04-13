@@ -35,40 +35,42 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>The resulting mutated value in the specified numeric format.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value is String) {
-				var newValue = value.ToString();
+			if (value != null) {
+				var newString = value as string;
 
-				if (String.IsNullOrWhiteSpace(newValue)) {
-					return null;
-				}
-
-				string rgxMod = "";
-
-				if (PreserveFloatingPoint) {
-					rgxMod = ".";
-
-					int search = newValue.LastIndexOf('.');
-
-					if (search > -1) {
-						newValue = newValue.Substring(0, search).Replace(".", "") + newValue.Substring(search);
-					}
-				}
-
-				if (PreserveSign) {
-					rgxMod += "+-";
-				}
-
-				newValue = Regex.Replace(newValue, $"[^0-9{rgxMod}]", "");
-
-				if (PreserveSign && newValue.Length > 0) {
-					newValue = newValue[0] + Regex.Replace(newValue.Substring(1), "[+-]", "");
-
-					if (newValue.Length == 1 && newValue.IndexOfAny(new[] { '+', '-' }) == 0) {
+				if (value != null) {
+					if (String.IsNullOrWhiteSpace(newString)) {
 						return null;
 					}
-				}
 
-				return String.IsNullOrEmpty(newValue) ? null : newValue;
+					string rgxMod = "";
+
+					if (PreserveFloatingPoint) {
+						rgxMod = ".";
+
+						int search = newString.LastIndexOf('.');
+
+						if (search > -1) {
+							newString = newString.Substring(0, search).Replace(".", "") + newString.Substring(search);
+						}
+					}
+
+					if (PreserveSign) {
+						rgxMod += "+-";
+					}
+
+					newString = Regex.Replace(newString, $"[^0-9{rgxMod}]", "");
+
+					if (PreserveSign && newString.Length > 0) {
+						newString = newString[0] + Regex.Replace(newString.Substring(1), "[+-]", "");
+
+						if (newString.Length == 1 && newString.IndexOfAny(new[] { '+', '-' }) == 0) {
+							return null;
+						}
+					}
+
+					return String.IsNullOrEmpty(newString) ? null : newString;
+				}
 			}
 
 			return value;

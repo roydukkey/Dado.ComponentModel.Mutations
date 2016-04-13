@@ -76,19 +76,21 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>The specified <paramref name="value" /> converted to the specified <see cref="Case" />.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value is String) {
-				var newValue = value.ToString();
+			if (value != null) {
+				var newString = value as string;
 
-				if (Case.HasFlag(CaseOptions.Upper)) {
-					return CultureInfo.TextInfo.ToUpper(newValue);
-				}
+				if (value != null) {
+					if (Case.HasFlag(CaseOptions.Upper)) {
+						return CultureInfo.TextInfo.ToUpper(newString);
+					}
 #if !FEATURE_CORECLR
-				else if (Case.HasFlag(CaseOptions.Title)) {
-					return CultureInfo.TextInfo.ToTitleCase(newValue);
-				}
+					else if (Case.HasFlag(CaseOptions.Title)) {
+						return CultureInfo.TextInfo.ToTitleCase(newString);
+					}
 #endif
-				else {
-					return CultureInfo.TextInfo.ToLower(newValue);
+					else {
+						return CultureInfo.TextInfo.ToLower(newString);
+					}
 				}
 			}
 

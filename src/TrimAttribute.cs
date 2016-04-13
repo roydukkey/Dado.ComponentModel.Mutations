@@ -77,19 +77,21 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>The string that remains after all occurrences of the characters in the the <see cref="Characters" /> array are removed from the start and/or end of the specified string. If the <see cref="Characters" /> array is null or an empty array, white-space characters are removed instead.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value is String) {
-				var newValue = value.ToString();
+			if (value != null) {
+				var newString = value as string;
 
-				if (Direction.IsSingleFlag()) {
-					if (Direction.HasFlag(TrimOptions.FromStart)) {
-						return newValue.TrimStart(Characters);
+				if (value != null) {
+					if (Direction.IsSingleFlag()) {
+						if (Direction.HasFlag(TrimOptions.FromStart)) {
+							return newString.TrimStart(Characters);
+						}
+						else if (Direction.HasFlag(TrimOptions.FromEnd)) {
+							return newString.TrimEnd(Characters);
+						}
 					}
-					else if (Direction.HasFlag(TrimOptions.FromEnd)) {
-						return newValue.TrimEnd(Characters);
-					}
+
+					return newString.Trim(Characters);
 				}
-
-				return newValue.Trim(Characters);
 			}
 
 			return value;

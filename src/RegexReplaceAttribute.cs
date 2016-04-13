@@ -62,11 +62,13 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If the regular expression pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value is String) {
-				var stringValue = value.ToString();
+			if (value != null) {
+				var newString = value as string;
 
-				foreach (string pattern in Patterns) {
-					value = new Regex(pattern, Options).Replace(stringValue, Replacement);
+				if (value != null) {
+					foreach (string pattern in Patterns) {
+						value = new Regex(pattern, Options).Replace(newString, Replacement);
+					}
 				}
 			}
 

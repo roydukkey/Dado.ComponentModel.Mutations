@@ -56,11 +56,13 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>A string that is equivalent to the current <paramref name="value" /> except that all instances of specified <see cref="Antecedents" /> are replaced with the value of <see cref="Replacement" />. If none of the <see cref="Antecedents" /> are found in the current <paramref name="value" />, the method returns the current <paramref name="value" /> unchanged.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value is String) {
-				var newValue = value.ToString();
+			if (value != null) {
+				var newString = value as string;
 
-				foreach (string antecedent in Antecedents) {
-					value = newValue.Replace(antecedent, Replacement);
+				if (value != null) {
+					foreach (string antecedent in Antecedents) {
+						value = newString.Replace(antecedent, Replacement);
+					}
 				}
 			}
 
