@@ -19,10 +19,7 @@
 			},
 			"imports": [
 				"dotnet5.5"
-			],
-			"compilationOptions": {
-				"define": [ "FEATURE_CORECLR" ]
-			}
+			]
 		},
 		"net461": {
 			"dependencies": {
