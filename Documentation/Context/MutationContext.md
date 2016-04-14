@@ -28,9 +28,9 @@ An *Items* property bag is available for additional contextual information about
 | Name | Description |
 | ---- | ----------- |
 | [MutationContext&lt;T&gt;(T)](#MutationContextT) | Initializes a new instance of the MutationContext&lt;T&gt; class for a given object instance. |
-| [MutationContext&lt;T&gt;(T, IDictionary<object, object>)](#MutationContextTIDictionary) | Initializes a new instance of the MutationContext&lt;T&gt; class for a given object instance and an property bag of items. |
-| [MutationContext&lt;T&gt;(T, IServiceProvider)](#MutationContextTIServiceProvider) | Initializes a new instance of the MutationContext&lt;T&gt; class for a given object instance and an serviceProvider. |
-| [MutationContext&lt;T&gt;(T, IDictionary<object, object>, IServiceProvider)](#MutationContextTIDictionaryIServiceProvider) | Initializes a new instance of the MutationContext&lt;T&gt; class for a given object instance, an serviceProvider, and an property bag of items. |
+| [MutationContext&lt;T&gt;(T, IDictionary<object, object>)](#MutationContextTIDictionary) | Initializes a new instance of the MutationContext&lt;T&gt; class for a given object instance and a property bag of items. |
+| [MutationContext&lt;T&gt;(T, IServiceProvider)](#MutationContextTIServiceProvider) | Initializes a new instance of the MutationContext&lt;T&gt; class for a given object instance and a serviceProvider. |
+| [MutationContext&lt;T&gt;(T, IDictionary<object, object>, IServiceProvider)](#MutationContextTIDictionaryIServiceProvider) | Initializes a new instance of the MutationContext&lt;T&gt; class for a given object instance, a serviceProvider, and a property bag of items. |
 
 
 ### Properties
@@ -100,7 +100,7 @@ public MutationContext(
 <a name='MutationContextTIDictionary'></a>
 ## MutationContext&lt;T&gt;(T, IDictionary<object, object>)
 
-Initializes a new instance of the *MutationContext&lt;T&gt;* class for a given object `instance` and an property bag of `items`.
+Initializes a new instance of the *MutationContext&lt;T&gt;* class for a given object `instance` and a property bag of `items`.
 
 ```csharp
 public MutationContext(
@@ -128,7 +128,7 @@ public MutationContext(
 <a name='MutationContextTIServiceProvider'></a>
 ## MutationContext&lt;T&gt;(T, IServiceProvider)
 
-Initializes a new instance of the *MutationContext&lt;T&gt;* class for a given object `instance` and an `serviceProvider`.
+Initializes a new instance of the *MutationContext&lt;T&gt;* class for a given object `instance` and a `serviceProvider`.
 
 ```csharp
 public MutationContext(
@@ -156,7 +156,7 @@ public MutationContext(
 <a name='MutationContextTIDictionaryIServiceProvider'></a>
 ## MutationContext&lt;T&gt;(T, IDictionary<object, object>, IServiceProvider)
 
-Initializes a new instance of the *MutationContext&lt;T&gt;* class for a given object `instance`, an `serviceProvider`, and an property bag of `items`.
+Initializes a new instance of the *MutationContext&lt;T&gt;* class for a given object `instance`, a `serviceProvider`, and a property bag of `items`.
 
 ```csharp
 public MutationContext(
@@ -238,7 +238,7 @@ public T ObjectInstance { get; }
 
 #### Remarks
 
-During mutation, especially property-level mutation, the instance might be in an indeterminate state. For example, the property being mutated, as well as other properties on the instance might not have been updated to their new values.
+During mutation, especially property-level mutation, the instance might be in a indeterminate state. For example, the property being mutated, as well as other properties on the instance might not have been updated to their new values.
 
 
 <a name='GetServiceType'></a>

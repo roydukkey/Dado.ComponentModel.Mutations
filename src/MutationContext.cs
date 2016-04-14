@@ -29,7 +29,7 @@ namespace System.ComponentModel.DataMutations
 		#region Constructors
 
 		/// <summary>
-		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" /> and an property bag of <paramref name="items" />.
+		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" /> and a property bag of <paramref name="items" />.
 		/// </summary>
 		/// <param name="instance">The instance to be modified during mutation.</param>
 		/// <param name="items">A set of key/value pairs to make available to consumers via <see cref="Items" />. The set of key/value pairs will be copied into a new dictionary, preventing consumers from modifying the original dictionary.</param>
@@ -37,7 +37,7 @@ namespace System.ComponentModel.DataMutations
 		public MutationContext(T instance, IDictionary<object, object> items) : this(instance, null, items, null) { }
 
 		/// <summary>
-		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" /> and an <paramref name="serviceProvider" />.
+		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" /> and a <paramref name="serviceProvider" />.
 		/// </summary>
 		/// <param name="instance">The instance to be modified during mutation.</param>
 		/// <param name="serviceProvider">A <see cref="IServiceProvider" /> to use when <see cref="GetService" /> is called.</param>
@@ -45,7 +45,7 @@ namespace System.ComponentModel.DataMutations
 		public MutationContext(T instance, IServiceProvider serviceProvider) : this(instance, null, null, serviceProvider) { }
 
 		/// <summary>
-		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />, an <paramref name="serviceProvider" />, and an property bag of <paramref name="items" />.
+		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />, a <paramref name="serviceProvider" />, and a property bag of <paramref name="items" />.
 		/// </summary>
 		/// <param name="instance">The instance to be modified during mutation.</param>
 		/// <param name="items">A set of key/value pairs to make available to consumers via <see cref="Items" />. The set of key/value pairs will be copied into a new dictionary, preventing consumers from modifying the original dictionary.</param>
@@ -61,7 +61,7 @@ namespace System.ComponentModel.DataMutations
 		public MutationContext(T instance) : this(instance, null, null, null) { }
 
 		/// <summary>
-		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />, the current type or property <paramref name="attributes" />, an <paramref name="serviceProvider" />, and an property bag of <paramref name="items" />.
+		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />, the current type or property <paramref name="attributes" />, a <paramref name="serviceProvider" />, and a property bag of <paramref name="items" />.
 		/// </summary>
 		/// <remarks>
 		///		When <paramref name="attributes" /> is null, the attributes of the <paramref name="instance" /> will be used.
