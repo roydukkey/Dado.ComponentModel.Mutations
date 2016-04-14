@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", 
 		Documentation\Attributes\MutationAttribute.md = Documentation\Attributes\MutationAttribute.md
 		Documentation\Attributes\RegexReplaceAttribute.md = Documentation\Attributes\RegexReplaceAttribute.md
 		Documentation\Attributes\ReplaceAttribute.md = Documentation\Attributes\ReplaceAttribute.md
+		Documentation\Attributes\ToDefaultValueAttribute.md = Documentation\Attributes\ToDefaultValueAttribute.md
 		Documentation\Attributes\ToLowerAttribute.md = Documentation\Attributes\ToLowerAttribute.md
 		Documentation\Attributes\ToNumericAttribute.md = Documentation\Attributes\ToNumericAttribute.md
 		Documentation\Attributes\ToUpperAttribute.md = Documentation\Attributes\ToUpperAttribute.md
