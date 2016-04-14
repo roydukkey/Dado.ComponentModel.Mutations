@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace System.ComponentModel.DataMutations
 {
-	internal partial class MutationAttributeStore
+	internal partial class AttributeStore
 	{
 		/// <summary>
 		///		Private class to store data associated with a type.

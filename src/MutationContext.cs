@@ -21,6 +21,7 @@ namespace System.ComponentModel.DataMutations
 
 		private readonly Dictionary<object, object> _items = new Dictionary<object, object>();
 		private readonly T _objectInstance;
+		private readonly IEnumerable<Attribute> _attributes;
 		private Func<Type, object> _serviceProvider;
 
 		#endregion Fields
@@ -33,7 +34,7 @@ namespace System.ComponentModel.DataMutations
 		/// <param name="instance">The instance to be modified during mutation.</param>
 		/// <param name="items">A set of key/value pairs to make available to consumers via <see cref="Items" />. The set of key/value pairs will be copied into a new dictionary, preventing consumers from modifying the original dictionary.</param>
 		/// <exception cref="ArgumentNullException">When <paramref name="instance" /> is <c>null</c>.</exception>
-		public MutationContext(T instance, IDictionary<object, object> items) : this(instance, items, null) { }
+		public MutationContext(T instance, IDictionary<object, object> items) : this(instance, null, items, null) { }
 
 		/// <summary>
 		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" /> and an <paramref name="serviceProvider" />.
@@ -41,7 +42,7 @@ namespace System.ComponentModel.DataMutations
 		/// <param name="instance">The instance to be modified during mutation.</param>
 		/// <param name="serviceProvider">A <see cref="IServiceProvider" /> to use when <see cref="GetService" /> is called.</param>
 		/// <exception cref="ArgumentNullException">When <paramref name="instance" /> is <c>null</c>.</exception>
-		public MutationContext(T instance, IServiceProvider serviceProvider) : this(instance, null, serviceProvider) { }
+		public MutationContext(T instance, IServiceProvider serviceProvider) : this(instance, null, null, serviceProvider) { }
 
 		/// <summary>
 		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />, an <paramref name="serviceProvider" />, and an property bag of <paramref name="items" />.
@@ -50,8 +51,35 @@ namespace System.ComponentModel.DataMutations
 		/// <param name="items">A set of key/value pairs to make available to consumers via <see cref="Items" />. The set of key/value pairs will be copied into a new dictionary, preventing consumers from modifying the original dictionary.</param>
 		/// <param name="serviceProvider">A <see cref="IServiceProvider" /> to use when <see cref="GetService" /> is called.</param>
 		/// <exception cref="ArgumentNullException">When <paramref name="instance" /> is <c>null</c>.</exception>
-		public MutationContext(T instance, IDictionary<object, object> items, IServiceProvider serviceProvider) : this(instance)
+		public MutationContext(T instance, IDictionary<object, object> items, IServiceProvider serviceProvider) : this(instance, null, items, serviceProvider) { }
+
+		/// <summary>
+		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />.
+		/// </summary>
+		/// <param name="instance">The instance to be modified during mutation.</param>
+		/// <exception cref="ArgumentNullException">When <paramref name="instance" /> is <c>null</c>.</exception>
+		public MutationContext(T instance) : this(instance, null, null, null) { }
+
+		/// <summary>
+		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />, the current type or property <paramref name="attributes" />, an <paramref name="serviceProvider" />, and an property bag of <paramref name="items" />.
+		/// </summary>
+		/// <remarks>
+		///		When <paramref name="attributes" /> is null, the attributes of the <paramref name="instance" /> will be used.
+		///	</remarks>
+		/// <param name="instance">The instance to be modified during mutation.</param>
+		/// <param name="attributes">A enumeration of attributes associated to the current type or property.</param>
+		/// <param name="items">A set of key/value pairs to make available to consumers via <see cref="Items" />. The set of key/value pairs will be copied into a new dictionary, preventing consumers from modifying the original dictionary.</param>
+		/// <param name="serviceProvider">A <see cref="IServiceProvider" /> to use when <see cref="GetService" /> is called.</param>
+		/// <exception cref="ArgumentNullException">When <paramref name="instance" /> is <c>null</c>.</exception>
+		internal MutationContext(T instance, IEnumerable<Attribute> attributes, IDictionary<object, object> items, IServiceProvider serviceProvider)
 		{
+			if (instance == null) {
+				throw new ArgumentNullException(nameof(instance));
+			}
+
+			_objectInstance = instance;
+			_attributes = new List<Attribute>(attributes ?? AttributeStore.Instance.GetTypeAttributes(this));
+
 			if (serviceProvider != null) {
 				InitializeServiceProvider(serviceType => serviceProvider.GetService(serviceType));
 			}
@@ -59,20 +87,6 @@ namespace System.ComponentModel.DataMutations
 			if (items != null) {
 				_items = new Dictionary<object, object>(items);
 			}
-		}
-
-		/// <summary>
-		///		Initializes a new instance of the <see cref="MutationContext{T}" /> class for a given object <paramref name="instance" />.
-		/// </summary>
-		/// <param name="instance">The instance to be modified during mutation.</param>
-		/// <exception cref="ArgumentNullException">When <paramref name="instance" /> is <c>null</c>.</exception>
-		public MutationContext(T instance)
-		{
-			if (instance == null) {
-				throw new ArgumentNullException(nameof(instance));
-			}
-
-			_objectInstance = instance;
 		}
 
 		#endregion Constructors
@@ -102,6 +116,11 @@ namespace System.ComponentModel.DataMutations
 		///		This property will never be <c>null</c>, but the dictionary may be empty. Changes made to items in this dictionary will never affect the original dictionary specified in the constructor.
 		/// </value>
 		public IDictionary<object, object> Items => _items;
+
+		/// <summary>
+		///		Gets the attributes associated with this context.
+		/// </summary>
+		public IEnumerable<Attribute> Attributes => _attributes;
 
 		#endregion Properties
 

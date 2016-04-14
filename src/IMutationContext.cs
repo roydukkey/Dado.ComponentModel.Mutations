@@ -22,5 +22,10 @@ namespace System.ComponentModel.DataMutations
 		///		Gets the dictionary of key/value pairs associated with this context.
 		/// </summary>
 		IDictionary<object, object> Items { get; }
+
+		/// <summary>
+		///		Gets the attributes associated with this context.
+		/// </summary>
+		IEnumerable<Attribute> Attributes { get; }
 	}
 }

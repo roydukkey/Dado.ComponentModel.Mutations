@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace System.ComponentModel.DataMutations
 {
-	internal partial class MutationAttributeStore
+	internal partial class AttributeStore
 	{
 		/// <summary>
 		///		Private abstract class for all store items.
@@ -15,7 +15,7 @@ namespace System.ComponentModel.DataMutations
 		{
 			#region Fields
 
-			private readonly IEnumerable<MutationAttribute> _attributes;
+			private readonly IEnumerable<Attribute> _attributes;
 
 			#endregion Fields
 
@@ -27,7 +27,7 @@ namespace System.ComponentModel.DataMutations
 			/// <param name="attributes">The attributes to associated with this <see cref="StoreItem" />.</param>
 			internal StoreItem(IEnumerable<Attribute> attributes)
 			{
-				_attributes = attributes.OfType<MutationAttribute>();
+				_attributes = attributes;
 			}
 
 			#endregion Constructors
@@ -35,9 +35,9 @@ namespace System.ComponentModel.DataMutations
 			#region Properties
 
 			/// <summary>
-			///		Gets the mutation attributes associated with this <see cref="StoreItem" />.
+			///		Gets the attributes associated with this <see cref="StoreItem" />.
 			/// </summary>
-			internal IEnumerable<MutationAttribute> MutationAttributes => _attributes;
+			internal IEnumerable<Attribute> Attributes => _attributes;
 
 			#endregion Properties
 		}

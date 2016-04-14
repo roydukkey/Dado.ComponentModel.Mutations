@@ -5,13 +5,7 @@ using System.Collections.Generic;
 
 namespace System.ComponentModel.DataMutations
 {
-	/// <summary>
-	///		A Cache of <see cref="MutationAttributeStore" />s.
-	/// </summary>
-	/// <remarks>
-	///		This internal class serves as a cache of mutation attributes. It exists both to help performance as well as to abstract away the differences between Reflection and TypeDescriptor.
-	/// </remarks>
-	internal partial class MutationAttributeStore
+	internal partial class AttributeStore
 	{
 		/// <summary>
 		///		Private class to store data associated with a property.

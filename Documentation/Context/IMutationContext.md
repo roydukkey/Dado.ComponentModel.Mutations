@@ -20,6 +20,7 @@ It supports *IServiceProvider* so that custom mutation code can acquire addition
 
 | Name | Description |
 | ---- | ----------- |
+| [Attributes](#Attributes) | Gets the attributes associated with this context. |
 | [Items](#Items) | Gets the dictionary of key/value pairs associated with this context. |
 | [ObjectInstance](#ObjectInstance) | Gets the instance being mutated. |
 
@@ -29,6 +30,23 @@ It supports *IServiceProvider* so that custom mutation code can acquire addition
 | Name | Description |
 | ---- | ----------- |
 | [GetService(Type)](#GetServiceType) | Gets the service object of the specified type. |
+
+
+<a name='Attributes'></a>
+## Attributes
+
+Gets the attributes associated with this context.
+
+#### Syntax
+
+```csharp
+IEnumerable<Attribute> Attributes { get; }
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Collections.Generic&lt;System.Attribute&gt;</dd>
+</dl>
 
 
 <a name='Items'></a>

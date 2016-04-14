@@ -13,12 +13,6 @@ namespace System.ComponentModel.DataMutations
 	/// </summary>
 	public static class Mutator
 	{
-		#region Fields
-
-		private static readonly MutationAttributeStore _Store = MutationAttributeStore.Instance;
-
-		#endregion Fields
-
 		#region Mutate Value
 
 		/// <summary>
@@ -112,7 +106,7 @@ namespace System.ComponentModel.DataMutations
 		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		public static object MutateProperty<T>(this MutationContext<T> context, PropertyInfo property)
 			where T : class
-			=> GetMutatedProperty<object>(context, property, true);
+			=> GetMutatedProperty<T, object>(context, property, true);
 
 		/// <summary>
 		///		Mutates the specified value against the specified property of the instance associated with the current context.
@@ -144,7 +138,7 @@ namespace System.ComponentModel.DataMutations
 		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		public static P MutateProperty<T, P>(this MutationContext<T> context, Expression<Func<T, P>> property)
 			where T : class
-			=> GetMutatedProperty<P>(context, GetPropertyInfo(property), true);
+			=> GetMutatedProperty<T, P>(context, GetPropertyInfo(property), true);
 
 		/// <summary>
 		///		Mutates the specified value against the specified property of the instance associated with the current context.
@@ -198,6 +192,7 @@ namespace System.ComponentModel.DataMutations
 		///		Mutates the specified value against the specified property of the instance associated with the current context.
 		/// </summary>
 		/// <typeparam name="T">The type to consult during mutation.</typeparam>
+		/// <typeparam name="P">The property type to consult for <see cref="MutationAttribute" />s.</typeparam>
 		/// <param name="context">Describes the type of object being mutated and provides services and context for mutation.</param>
 		/// <param name="property">The property info that describes the value to be modified.</param>
 		/// <param name="inferValue">If <c>true</c>, the current <paramref name="property" /> value will be mutated in place of specified <paramref name="value" />.</param>
@@ -206,7 +201,7 @@ namespace System.ComponentModel.DataMutations
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="property" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
-		private static T GetMutatedProperty<T>(IMutationContext context, PropertyInfo property, bool inferValue, T value = default(T))
+		private static P GetMutatedProperty<T, P>(MutationContext<T> context, PropertyInfo property, bool inferValue, P value = default(P))
 		{
 			if (context == null) {
 				throw new ArgumentNullException(nameof(context));
@@ -217,16 +212,19 @@ namespace System.ComponentModel.DataMutations
 			}
 
 			if (inferValue) {
-				value = (T)property.GetValue(context.ObjectInstance);
+				value = (P)property.GetValue(context.ObjectInstance);
 			}
 
 			// Throw if a value cannot be assigned to this property.
-			EnsureValidPropertyType(property.Name, _Store.GetPropertyType(context, property), value);
+			EnsureValidPropertyType(property.Name, AttributeStore.Instance.GetPropertyType(context, property), value);
 
-			var attributes = _Store.GetPropertyMutationAttributes(context, property);
+			// Create a new context using the existing context's IServiceProvider and items, so that we will not overwrite the properties of the existing instance.
+			var propertyContext = new MutationContext<T>(context.ObjectInstance, AttributeStore.Instance.GetPropertyAttributes(context, property), context.Items, context);
+
+			var attributes = propertyContext.Attributes.OfType<MutationAttribute>();
 
 			if (attributes.Any()) {
-				value = GetMutatedValue(context, attributes, value);
+				value = GetMutatedValue(propertyContext, attributes, value);
 
 				if (inferValue) {
 					property.SetValue(context.ObjectInstance, value);
@@ -247,7 +245,7 @@ namespace System.ComponentModel.DataMutations
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="attributes" /> is <c>null</c>.</exception>
 		private static T GetMutatedObject<T>(MutationContext<T> context, bool inferValue, T instance = default(T))
-			=> GetMutatedObject(context, _Store.GetTypeMutationAttributes(context), inferValue, instance);
+			=> GetMutatedObject(context, context.Attributes.OfType<MutationAttribute>(), inferValue, instance);
 
 		/// <summary>
 		///		Mutates an object instance against the current context and the specified <see cref="MutationAttribute" />s.
@@ -273,13 +271,10 @@ namespace System.ComponentModel.DataMutations
 			instance = inferValue ? context.ObjectInstance : instance;
 
 			// Step 1: Mutate the object properties' mutation attributes
-			var properties = instance.GetType().GetRuntimeProperties().Where(p => MutationAttributeStore.IsPublic(p) && !p.GetIndexParameters().Any());
+			var properties = instance.GetType().GetRuntimeProperties().Where(p => AttributeStore.IsPublic(p) && !p.GetIndexParameters().Any());
 
 			foreach (var property in properties) {
-				// Create a new context using the existing context's IServiceProvider and items, so that we will not overwrite the properties of the existing instance.
-				var propertyContext = new MutationContext<T>(instance, context.Items, context);
-
-				GetMutatedProperty<object>(propertyContext, property, true);
+				GetMutatedProperty<T, object>(context, property, true);
 			}
 
 			// Step 2: Mutate the object's mutation attributes

@@ -2,21 +2,22 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace System.ComponentModel.DataMutations
 {
 	/// <summary>
-	///		A Cache of <see cref="MutationAttributeStore" />s.
+	///		A Cache of <see cref="AttributeStore" />s.
 	/// </summary>
 	/// <remarks>
-	///		This internal class serves as a cache of mutation attributes. It exists both to help performance as well as to abstract away the differences between Reflection and TypeDescriptor.
+	///		This internal class serves as a cache of attributes. It exists both to help performance as well as to abstract away the differences between Reflection and TypeDescriptor.
 	/// </remarks>
-	internal partial class MutationAttributeStore
+	internal partial class AttributeStore
 	{
 		#region Fields
 
-		private static readonly MutationAttributeStore _Singleton = new MutationAttributeStore();
+		private static readonly AttributeStore _Singleton = new AttributeStore();
 		private readonly Dictionary<Type, TypeStoreItem> _typeStoreItems = new Dictionary<Type, TypeStoreItem>();
 
 		#endregion Fields
@@ -24,9 +25,9 @@ namespace System.ComponentModel.DataMutations
 		#region Properties
 
 		/// <summary>
-		///		Gets the singleton <see cref="MutationAttributeStore" />.
+		///		Gets the singleton <see cref="AttributeStore" />.
 		/// </summary>
-		internal static MutationAttributeStore Instance => _Singleton;
+		internal static AttributeStore Instance => _Singleton;
 
 		#endregion Properties
 
@@ -36,17 +37,17 @@ namespace System.ComponentModel.DataMutations
 			=> (p.GetMethod != null && p.GetMethod.IsPublic) || (p.SetMethod != null && p.SetMethod.IsPublic);
 
 		/// <summary>
-		///		Retrieves the set of mutation attributes for the property.
+		///		Retrieves the set of attributes for the property.
 		/// </summary>
 		/// <param name="context">The context that describes the object containing property.</param>
 		/// <param name="property">The <see cref="PropertyInfo" /> that describes the property.</param>
-		/// <returns>The collection of mutation attributes.</returns>
-		internal IEnumerable<MutationAttribute> GetPropertyMutationAttributes(IMutationContext context, PropertyInfo property)
+		/// <returns>The collection of attributes.</returns>
+		internal IEnumerable<Attribute> GetPropertyAttributes(IMutationContext context, PropertyInfo property)
 		{
 			var typeItem = GetTypeStoreItem(context.ObjectInstance.GetType());
 			var item = typeItem.GetPropertyStoreItem(property.Name);
 
-			return item.MutationAttributes;
+			return item.Attributes;
 		}
 
 		/// <summary>
@@ -64,16 +65,12 @@ namespace System.ComponentModel.DataMutations
 		}
 
 		/// <summary>
-		///		Retrieves the type level mutation attributes for the given type.
+		///		Retrieves the type level attributes for the given type.
 		/// </summary>
 		/// <param name="context">The context that describes the type.</param>
-		/// <returns>The collection of mutation attributes.</returns>
-		internal IEnumerable<MutationAttribute> GetTypeMutationAttributes(IMutationContext context)
-		{
-			var item = GetTypeStoreItem(context.ObjectInstance.GetType());
-
-			return item.MutationAttributes;
-		}
+		/// <returns>The collection of attributes.</returns>
+		internal IEnumerable<Attribute> GetTypeAttributes(IMutationContext context)
+			=> GetTypeStoreItem(context.ObjectInstance.GetType()).Attributes;
 
 		#endregion Internal Methods
 
