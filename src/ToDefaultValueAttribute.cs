@@ -34,11 +34,6 @@ namespace System.ComponentModel.DataMutations
 		/// </summary>
 		public IEnumerable<object> Values { get; private set; }
 
-		/// <summary>
-		///		A flag indicating the attribute requires a non-null <see cref="MutationContext{T}" /> to perform validation.
-		/// </summary>
-		public override bool RequiresContext => true;
-
 		#endregion Properties
 
 		#region Protected Methods
@@ -53,7 +48,7 @@ namespace System.ComponentModel.DataMutations
 		{
 			foreach (var testValue in Values) {
 				if (testValue.Equals(value)) {
-					var attribute = context.Attributes.FirstOrDefault(x => x is DefaultValueAttribute) as DefaultValueAttribute;
+					var attribute = context?.Attributes.FirstOrDefault(x => x is DefaultValueAttribute) as DefaultValueAttribute;
 
 					if (attribute != null) {
 						value = attribute.Value;
