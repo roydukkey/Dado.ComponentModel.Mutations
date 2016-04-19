@@ -277,7 +277,7 @@ The property value that has been modified according to any associated *MutationA
 | --------- | --------- |
 | System.ArgumentNullException | When `context` is **null**. |
 | System.ArgumentNullException | When `property` is **null**. |
-| System.ArgumentException | When the *PropertyInfo.Name* of `context` is not a valid property. |
+| System.ArgumentException | When the *MemberInfo.Name* of `context` is not a valid property. |
 
 
 <a name='MutatePropertyMutationContextPropertyInfoP'></a>
@@ -324,7 +324,7 @@ The value that has been modified according to any *MutationAttribute*s associate
 | --------- | --------- |
 | System.ArgumentNullException | When `context` is **null**. |
 | System.ArgumentNullException | When `property` is **null**. |
-| System.ArgumentException | When the *PropertyInfo.Name* of `context` is not a valid property. |
+| System.ArgumentException | When the *MemberInfo.Name* of `context` is not a valid property. |
 
 
 <a name='MutatePropertyMutationContextExpression'></a>
@@ -369,7 +369,7 @@ The property value that has been modified according to any associated *MutationA
 | System.ArgumentNullException | When `context` is **null**. |
 | System.ArgumentNullException | When `property` is **null**. |
 | System.ArgumentException | When the expression doesn't indicate a valid `property`. |
-| System.ArgumentException | When the *PropertyInfo.Name* of `context` is not a valid property. |
+| System.ArgumentException | When the *MemberInfo.Name* of `context` is not a valid property. |
 
 
 <a name='MutatePropertyMutationContextExpressionP'></a>
@@ -417,4 +417,4 @@ The value that has been modified according to any *MutationAttribute*s associate
 | System.ArgumentNullException | When `context` is **null**. |
 | System.ArgumentNullException | When `property` is **null**. |
 | System.ArgumentException | When the expression doesn't indicate a valid `property`. |
-| System.ArgumentException | When the *PropertyInfo.Name* of `context` is not a valid property. |
+| System.ArgumentException | When the *MemberInfo.Name* of `context` is not a valid property. |

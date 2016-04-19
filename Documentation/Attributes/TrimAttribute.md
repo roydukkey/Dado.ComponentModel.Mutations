@@ -18,7 +18,7 @@ The Trim method removes from the specified string all leading and/or trailing ch
 
 If the specified string equals *Empty* or all the characters in the string consist of characters in the *Characters* array, the resulting string is *Empty*.
 
-If *Characters* is **null** or an empty array, mutation removes any leading or trailing characters that result in *IsWhiteSpace* returning **true** when the character is passed to the method.
+If *Characters* is **null** or an empty array, mutation removes any leading or trailing characters that result in *Char.IsWhiteSpace(char)* returning **true** when the character is passed to the method.
 
 ### Constructors
 

@@ -34,7 +34,7 @@ namespace System.ComponentModel.DataMutations
 	///			If the specified string equals <see cref="String.Empty" /> or all the characters in the string consist of characters in the <see cref="Characters" /> array, the resulting string is <see cref="String.Empty" />.
 	///		</para>
 	///		<para>
-	///			If <see cref="Characters" /> is <c>null</c> or an empty array, mutation removes any leading or trailing characters that result in <see cref="Char.IsWhiteSpace" /> returning <c>true</c> when the character is passed to the method.
+	///			If <see cref="Characters" /> is <c>null</c> or an empty array, mutation removes any leading or trailing characters that result in <see cref="Char.IsWhiteSpace(char)" /> returning <c>true</c> when the character is passed to the method.
 	///		</para>
 	/// </remarks>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]

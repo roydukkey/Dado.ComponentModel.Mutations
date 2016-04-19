@@ -103,7 +103,7 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>The property value that has been modified according to any associated <see cref="MutationAttribute" />s.</returns>
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="property" /> is <c>null</c>.</exception>
-		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
+		/// <exception cref="ArgumentException">When the <see cref="MemberInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		public static object MutateProperty<T>(this MutationContext<T> context, PropertyInfo property)
 			where T : class
 			=> GetMutatedProperty<T, object>(context, property, true);
@@ -119,7 +119,7 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>The value that has been modified according to any <see cref="MutationAttribute" />s associated with the specified property.</returns>
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="property" /> is <c>null</c>.</exception>
-		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
+		/// <exception cref="ArgumentException">When the <see cref="MemberInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		public static P MutateProperty<T, P>(this MutationContext<T> context, PropertyInfo property, P value)
 			where T : class
 			=> GetMutatedProperty(context, property, true, value);
@@ -135,7 +135,7 @@ namespace System.ComponentModel.DataMutations
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="property" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentException">When the expression doesn't indicate a valid <paramref name="property" />.</exception>
-		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
+		/// <exception cref="ArgumentException">When the <see cref="MemberInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		public static P MutateProperty<T, P>(this MutationContext<T> context, Expression<Func<T, P>> property)
 			where T : class
 			=> GetMutatedProperty<T, P>(context, GetPropertyInfo(property), true);
@@ -152,7 +152,7 @@ namespace System.ComponentModel.DataMutations
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="property" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentException">When the expression doesn't indicate a valid <paramref name="property" />.</exception>
-		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
+		/// <exception cref="ArgumentException">When the <see cref="MemberInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		public static P MutateProperty<T, P>(this MutationContext<T> context, Expression<Func<T, P>> property, P value)
 			where T : class
 			=> GetMutatedProperty(context, GetPropertyInfo(property), false, value);
@@ -200,7 +200,7 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>The value that has been modified according to any <see cref="MutationAttribute" />s associated with the specified property.</returns>
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="property" /> is <c>null</c>.</exception>
-		/// <exception cref="ArgumentException">When the <see cref="PropertyInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
+		/// <exception cref="ArgumentException">When the <see cref="MemberInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		private static P GetMutatedProperty<T, P>(MutationContext<T> context, PropertyInfo property, bool inferValue, P value = default(P))
 		{
 			if (context == null) {
@@ -243,7 +243,6 @@ namespace System.ComponentModel.DataMutations
 		/// <param name="instance">The instance to be modified.</param>
 		/// <returns>The object whose value and properties has been modified according to any associated <see cref="MutationAttribute" />s and <see cref="IMutableObject" /> implementation.</returns>
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
-		/// <exception cref="ArgumentNullException">When <paramref name="attributes" /> is <c>null</c>.</exception>
 		private static T GetMutatedObject<T>(MutationContext<T> context, bool inferValue, T instance = default(T))
 			=> GetMutatedObject(context, context.Attributes.OfType<MutationAttribute>(), inferValue, instance);
 
