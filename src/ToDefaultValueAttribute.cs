@@ -22,7 +22,12 @@ namespace System.ComponentModel.DataMutations
 		/// <param name="additional">Additional values to make default.</param>
 		public ToDefaultValueAttribute(object value, params object[] additional)
 		{
-			Values = new[] { value }.Concat(additional);
+			if (additional == null) {
+				Values = new[] { null, value };
+			}
+			else {
+				Values = new[] { value }.Concat(additional);
+			}
 		}
 
 		#endregion Constructors

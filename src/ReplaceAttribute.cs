@@ -27,7 +27,11 @@ namespace System.ComponentModel.DataMutations
 		/// <param name="additional">Additional strings to replace.</param>
 		public ReplaceAttribute(string antecedent, params string[] additional)
 		{
-			Antecedents = new[] { antecedent }.Concat(additional);
+			Antecedents = new[] { antecedent };
+
+			if (additional != null) {
+				Antecedents = Antecedents.Concat(additional);
+			}
 		}
 
 		#endregion Constructors

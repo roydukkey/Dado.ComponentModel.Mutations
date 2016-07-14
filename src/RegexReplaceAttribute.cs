@@ -28,7 +28,11 @@ namespace System.ComponentModel.DataMutations
 		/// <param name="additional">Additional regular expression pattern to match.</param>
 		public RegexReplaceAttribute(string pattern, params string[] additional)
 		{
-			Patterns = new[] { pattern }.Concat(additional);
+			Patterns = new[] { pattern };
+
+			if (additional != null) {
+				Patterns = Patterns.Concat(additional);
+			}
 		}
 
 		#endregion Constructors
