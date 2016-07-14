@@ -33,6 +33,7 @@ If *Characters* is **null** or an empty array, mutation removes any leading or t
 | ---- | ----------- |
 | [Characters](#Characters) | Gets an array of Unicode characters to remove. |
 | [Direction](#Direction) | Gets or sets a value indicating the trimming direction. |
+| [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
 ### Methods

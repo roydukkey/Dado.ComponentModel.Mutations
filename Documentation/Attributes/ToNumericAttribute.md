@@ -19,6 +19,7 @@ public class ToNumericAttribute : MutationAttribute
 | ---- | ----------- |
 | [PreserveFloatingPoint](#PreserveFloatingPoint) | Gets or sets a value indicating whether a floating point indication (.) should be preserved during mutation. |
 | [PreserveSign](#PreserveSign) | Gets or sets a value indicating whether a sign indication (±) should be preserved during mutation. |
+| [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
 ### Methods

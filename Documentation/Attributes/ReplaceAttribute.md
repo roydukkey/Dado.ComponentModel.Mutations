@@ -32,6 +32,7 @@ This attribute performs an ordinal (case-sensitive and culture-insensitive) sear
 | ---- | ----------- |
 | [Antecedents](#Antecedents) | Gets the values to replace in a string. |
 | [Replacement](#Replacement) | Gets or sets the string to replace all occurrences of the specified Antecedents. |
+| [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
 ### Methods

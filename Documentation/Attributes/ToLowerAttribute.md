@@ -18,6 +18,7 @@ public class ToLowerAttribute : MutationAttribute
 | Name | Description |
 | ---- | ----------- |
 | [CultureInfo](#CultureInfo) | Gets or sets the CultureInfo to be used when determining the appropriate case. |
+| [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
 ### Methods
