@@ -47,7 +47,7 @@ namespace System.ComponentModel.DataMutations
 		protected override object MutateValue(object value, IMutationContext context)
 		{
 			foreach (var testValue in Values) {
-				if (testValue.Equals(value)) {
+				if (testValue == value || (testValue != null && testValue.Equals(value))) {
 					var attribute = context?.Attributes.FirstOrDefault(x => x is DefaultValueAttribute) as DefaultValueAttribute;
 
 					if (attribute != null) {
