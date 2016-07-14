@@ -69,7 +69,7 @@ namespace System.ComponentModel.DataMutations
 			if (value != null) {
 				var newString = value as string;
 
-				if (value != null) {
+				if (newString != null) {
 					foreach (string pattern in Patterns) {
 						value = new Regex(pattern, Options).Replace(newString, Replacement);
 					}

@@ -63,7 +63,7 @@ namespace System.ComponentModel.DataMutations
 			if (value != null) {
 				var newString = value as string;
 
-				if (value != null) {
+				if (newString != null) {
 					foreach (string antecedent in Antecedents) {
 						value = newString.Replace(antecedent, Replacement);
 					}

@@ -80,7 +80,7 @@ namespace System.ComponentModel.DataMutations
 			if (value != null) {
 				var newString = value as string;
 
-				if (value != null) {
+				if (newString != null) {
 					if (Direction.IsSingleFlag()) {
 						if (Direction.HasFlag(TrimOptions.FromStart)) {
 							return newString.TrimStart(Characters);

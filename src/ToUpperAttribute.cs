@@ -33,7 +33,7 @@ namespace System.ComponentModel.DataMutations
 			if (value != null) {
 				var newString = value as string;
 
-				if (value != null) {
+				if (newString != null) {
 					return CultureInfo.TextInfo.ToUpper(newString);
 				}
 
