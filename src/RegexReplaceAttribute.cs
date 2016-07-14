@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace System.ComponentModel.DataMutations
 {
 	/// <summary>
-	///		Used to mutated a string replacing all strings that match a regular expression pattern with a specified replacement string.
+	///		Used to mutate a string replacing all strings that match a regular expression pattern with a specified replacement string.
 	/// </summary>
 	/// <remarks>
 	///		If <see cref="Replacement" /> is <c>null</c>, each match of the specified <see cref="Patterns" /> are removed.

@@ -6,7 +6,7 @@ using System.Globalization;
 namespace System.ComponentModel.DataMutations
 {
 	/// <summary>
-	///		Used to mutated the specified string or char to a lowercase.
+	///		Used to mutate the specified string or char to a lowercase.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property)]
 	public class ToLowerAttribute : MutationAttribute

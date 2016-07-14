@@ -1,6 +1,6 @@
 # ReplaceAttribute [..](../README.md#documentation-index 'Documentation Index')
 
-Used to mutated a string so all occurrences of a specified strings are replaced with another specified string.
+Used to mutate a string so all occurrences of a specified strings are replaced with another specified string.
 
 **Namespace:** System.ComponentModel.DataMutations<br />
 **Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)

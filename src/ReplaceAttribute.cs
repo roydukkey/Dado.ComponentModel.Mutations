@@ -7,7 +7,7 @@ using System.Linq;
 namespace System.ComponentModel.DataMutations
 {
 	/// <summary>
-	///		Used to mutated a string so all occurrences of a specified strings are replaced with another specified string.
+	///		Used to mutate a string so all occurrences of a specified strings are replaced with another specified string.
 	/// </summary>
 	/// <remarks>
 	///		If <see cref="Replacement" /> is <c>null</c>, all occurrences of the specified <see cref="Antecedents" /> are removed.

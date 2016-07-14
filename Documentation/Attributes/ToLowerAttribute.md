@@ -1,6 +1,6 @@
 # ToLowerAttribute [..](../README.md#documentation-index 'Documentation Index')
 
-Used to mutated the specified string to a lowercase.
+Used to mutate the specified string to a lowercase.
 
 **Namespace:** System.ComponentModel.DataMutations<br />
 **Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)

@@ -1,6 +1,6 @@
 # TrimAttribute [..](../README.md#documentation-index 'Documentation Index')
 
-Used to mutated a specified string in which all leading and/or trailing occurrences of a set of specified characters are removed.
+Used to mutate a specified string in which all leading and/or trailing occurrences of a set of specified characters are removed.
 
 **Namespace:** System.ComponentModel.DataMutations<br />
 **Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)

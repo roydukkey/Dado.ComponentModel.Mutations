@@ -4,7 +4,7 @@
 namespace System.ComponentModel.DataMutations
 {
 	/// <summary>
-	///		Used to mutated the a string to <c>null</c> when its value is empty or whitespace.
+	///		Used to mutate the a string to <c>null</c> when its value is empty or whitespace.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property)]
 	public class ToNullStringAttribute : MutationAttribute

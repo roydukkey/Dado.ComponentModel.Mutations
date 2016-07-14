@@ -1,6 +1,6 @@
 # RegexReplaceAttribute [..](../README.md#documentation-index 'Documentation Index')
 
-Used to mutated a string replacing all strings that match a regular expression pattern with a specified replacement string.
+Used to mutate a string replacing all strings that match a regular expression pattern with a specified replacement string.
 
 **Namespace:** System.ComponentModel.DataMutations<br />
 **Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)

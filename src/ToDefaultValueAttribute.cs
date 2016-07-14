@@ -8,7 +8,7 @@ using System.Reflection;
 namespace System.ComponentModel.DataMutations
 {
 	/// <summary>
-	///		Used to mutated the specified values to the associated <see cref="DefaultValueAttribute.Value" /> or the type's default value.
+	///		Used to mutate the specified values to the associated <see cref="DefaultValueAttribute.Value" /> or the type's default value.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property)]
 	public class ToDefaultValueAttribute : MutationAttribute

@@ -1,6 +1,6 @@
 # ToNumericAttribute [..](../README.md#documentation-index 'Documentation Index')
 
-Used to mutated a string to allow only numeric characters.
+Used to mutate a string to allow only numeric characters.
 
 **Namespace:** System.ComponentModel.DataMutations<br />
 **Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)

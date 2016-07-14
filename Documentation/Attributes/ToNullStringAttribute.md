@@ -1,6 +1,6 @@
 # ToNullStringAttribute [..](../README.md#documentation-index 'Documentation Index')
 
-Used to mutated the a string to **null** when its value is empty or whitespace.
+Used to mutate the a string to **null** when its value is empty or whitespace.
 
 **Namespace:** System.ComponentModel.DataMutations<br />
 **Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)

@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace System.ComponentModel.DataMutations
 {
 	/// <summary>
-	///		Used to mutated a string to allow only numeric characters.
+	///		Used to mutate a string to allow only numeric characters.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property)]
 	public class ToNumericAttribute : MutationAttribute
