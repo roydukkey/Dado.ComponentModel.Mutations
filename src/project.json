@@ -1,5 +1,5 @@
 ﻿{
-	"version": "0.1.0-beta-2",
+	"version": "0.2.0",
 	"description": "Provides attritubes that are used to help ensure data integrity for objects used as data sources.",
 	"packOptions": {
 		"type": "git",
