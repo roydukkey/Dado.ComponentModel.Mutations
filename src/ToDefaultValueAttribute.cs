@@ -39,6 +39,11 @@ namespace System.ComponentModel.DataMutations
 		/// </summary>
 		public IEnumerable<object> Values { get; private set; }
 
+		/// <summary>
+		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>50</c>.
+		/// </summary>
+		public override int Priority { get; set; } = 50;
+
 		#endregion Properties
 
 		#region Protected Methods

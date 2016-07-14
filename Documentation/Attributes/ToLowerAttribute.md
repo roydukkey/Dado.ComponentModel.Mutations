@@ -18,6 +18,7 @@ public class ToLowerAttribute : MutationAttribute
 | Name | Description |
 | ---- | ----------- |
 | [CultureInfo](#CultureInfo) | Gets or sets the CultureInfo to be used when determining the appropriate case. |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
@@ -25,7 +26,7 @@ public class ToLowerAttribute : MutationAttribute
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToLowerAttribute. |
 
 
@@ -43,6 +44,23 @@ public CultureInfo CultureInfo { get; set; }
 <dl>
 	<dt>Type</dt>
 	<dd>System.Globalization.CultureInfo</dd>
+</dl>
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `30`.
+
+#### Syntax
+
+```csharp
+public override int Priority { get; set; } = 30;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
 </dl>
 
 

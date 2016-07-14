@@ -9,6 +9,15 @@ namespace System.ComponentModel.DataMutations
 	[AttributeUsage(AttributeTargets.Property)]
 	public class ToNullStringAttribute : MutationAttribute
 	{
+		#region Properties
+
+		/// <summary>
+		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>20</c>.
+		/// </summary>
+		public override int Priority { get; set; } = 20;
+
+		#endregion Properties
+
 		#region Protected Methods
 
 		/// <summary>

@@ -15,6 +15,11 @@ namespace System.ComponentModel.DataMutations
 		/// </summary>
 		public virtual bool RequiresContext => false;
 
+		/// <summary>
+		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Base class defaults to <c>10</c>. Override in child classes as appropriate.
+		/// </summary>
+		public virtual int Priority { get; set; } = 10;
+
 		#endregion Properties
 
 		#region Public Methods

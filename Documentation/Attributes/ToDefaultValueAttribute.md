@@ -1,6 +1,6 @@
 # ToDefaultValueAttribute [..](../README.md#documentation-index 'Documentation Index')
 
-Used to mutated the specified values to the associated *DefaultValueAttribute.Value* or the type's default value.
+Used to mutate the specified values to the associated *DefaultValueAttribute.Value* or the type's default value.
 
 **Namespace:** System.ComponentModel.DataMutations<br />
 **Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)
@@ -24,6 +24,8 @@ public class ToDefaultValueAttribute : MutationAttribute
 
 | Name | Description |
 | ---- | ----------- |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
+| [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 | [Values](#Values) | Gets the values to make default. |
 
 
@@ -31,7 +33,7 @@ public class ToDefaultValueAttribute : MutationAttribute
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute;. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToDefaultValueAttribute. |
 
 
@@ -56,6 +58,23 @@ public ToDefaultValueAttribute(
 	<dd>Type: System.Object<br />The value that should be made default.</dd>
 	<dt>additional</dt>
 	<dd>Type: System.Object[]<br />Additional values to make default.</dd>
+</dl>
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `50`.
+
+#### Syntax
+
+```csharp
+public override int Priority { get; set; } = 50;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
 </dl>
 
 

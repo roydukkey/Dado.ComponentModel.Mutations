@@ -33,6 +33,7 @@ If *Characters* is **null** or an empty array, mutation removes any leading or t
 | ---- | ----------- |
 | [Characters](#Characters) | Gets an array of Unicode characters to remove. |
 | [Direction](#Direction) | Gets or sets a value indicating the trimming direction. |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
@@ -40,7 +41,7 @@ If *Characters* is **null** or an empty array, mutation removes any leading or t
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this TrimAttribute. |
 
 
@@ -96,6 +97,23 @@ public TrimOptions Direction { get; set; }
 <dl>
 	<dt>Type</dt>
 	<dd>System.ComponentModel.DataMutations.TrimOptions</dd>
+</dl>
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `30`.
+
+#### Syntax
+
+```csharp
+public override int Priority { get; set; } = 30;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
 </dl>
 
 

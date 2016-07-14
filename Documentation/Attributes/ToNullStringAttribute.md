@@ -13,12 +13,37 @@ public class ToNullStringAttribute : MutationAttribute
 ```
 
 
+### Properties
+
+| Name | Description |
+| ---- | ----------- |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
+| [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
+
+
 ### Methods
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToNullStringAttribute. |
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `20`.
+
+#### Syntax
+
+```csharp
+public override int Priority { get; set; } = 20;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
+</dl>
 
 
 <a name='MutateValueObjectIMutationContext'></a>

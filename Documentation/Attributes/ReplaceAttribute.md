@@ -31,6 +31,7 @@ This attribute performs an ordinal (case-sensitive and culture-insensitive) sear
 | Name | Description |
 | ---- | ----------- |
 | [Antecedents](#Antecedents) | Gets the values to replace in a string. |
+| [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [Replacement](#Replacement) | Gets or sets the string to replace all occurrences of the specified Antecedents. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
@@ -39,7 +40,7 @@ This attribute performs an ordinal (case-sensitive and culture-insensitive) sear
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ReplaceAttribute. |
 
 

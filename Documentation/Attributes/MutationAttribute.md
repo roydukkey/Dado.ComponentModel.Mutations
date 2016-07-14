@@ -16,6 +16,7 @@ public abstract class MutationAttribute : Attribute
 
 | Name | Description |
 | ---- | ----------- |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [RequiresContext](#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
@@ -23,8 +24,25 @@ public abstract class MutationAttribute : Attribute
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | A protected method to override and implement mutation logic. |
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Base class defaults to `10`. Override in child classes as appropriate.
+
+#### Syntax
+
+```csharp
+public virtual int Priority { get; set; } = 10;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
+</dl>
 
 
 <a name='RequiresContext'></a>
@@ -47,7 +65,7 @@ public virtual bool RequiresContext { get; }
 <a name='MutateObjectIMutationContext'></a>
 ## Mutate(Object, IMutationContext)
 
-Mutates the given value according to this *MutationContext&lt;T&gt;*.
+Mutates the given value according to this *MutationAttribute*.
 
 #### Syntax
 

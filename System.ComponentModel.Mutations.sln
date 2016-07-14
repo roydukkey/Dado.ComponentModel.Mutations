@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A6F46F0-B703-45BC-AB96-E649C21C7879}"
 	ProjectSection(SolutionItems) = preProject
@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", 
 		Documentation\Attributes\ReplaceAttribute.md = Documentation\Attributes\ReplaceAttribute.md
 		Documentation\Attributes\ToDefaultValueAttribute.md = Documentation\Attributes\ToDefaultValueAttribute.md
 		Documentation\Attributes\ToLowerAttribute.md = Documentation\Attributes\ToLowerAttribute.md
+		Documentation\Attributes\ToNullStringAttribute.md = Documentation\Attributes\ToNullStringAttribute.md
 		Documentation\Attributes\ToNumericAttribute.md = Documentation\Attributes\ToNumericAttribute.md
 		Documentation\Attributes\ToUpperAttribute.md = Documentation\Attributes\ToUpperAttribute.md
 		Documentation\Attributes\TrimAttribute.md = Documentation\Attributes\TrimAttribute.md

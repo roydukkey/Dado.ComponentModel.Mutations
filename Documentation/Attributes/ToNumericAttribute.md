@@ -19,6 +19,7 @@ public class ToNumericAttribute : MutationAttribute
 | ---- | ----------- |
 | [PreserveFloatingPoint](#PreserveFloatingPoint) | Gets or sets a value indicating whether a floating point indication (.) should be preserved during mutation. |
 | [PreserveSign](#PreserveSign) | Gets or sets a value indicating whether a sign indication (±) should be preserved during mutation. |
+| [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
@@ -26,7 +27,7 @@ public class ToNumericAttribute : MutationAttribute
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToNumericAttribute. |
 
 

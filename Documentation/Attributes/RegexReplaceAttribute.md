@@ -32,6 +32,7 @@ The *Replacement* property specifies the string that is to replace each match in
 | ---- | ----------- |
 | [Options](#Options) | Gets or sets a bitwise combination of the enumeration values that modify the regular expression. |
 | [Patterns](#Patterns) | Gets the regular expression pattern to match in a string. |
+| [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [Replacement](#Replacement) | Gets or sets the replacement pattern that will be used to replace each match of the specified Patterns. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
@@ -40,7 +41,7 @@ The *Replacement* property specifies the string that is to replace each match in
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationContext&lt;T&gt;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this RegexReplaceAttribute. |
 
 

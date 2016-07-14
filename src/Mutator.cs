@@ -181,7 +181,7 @@ namespace System.ComponentModel.DataMutations
 				throw new ArgumentNullException(nameof(attributes));
 			}
 
-			foreach (var attribute in attributes) {
+			foreach (var attribute in attributes.OrderBy(x => x.Priority)) {
 				value = (T)attribute.Mutate(value, context);
 			}
 
