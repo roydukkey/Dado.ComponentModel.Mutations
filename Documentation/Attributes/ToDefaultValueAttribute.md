@@ -12,6 +12,12 @@ Used to mutate the specified values to the associated *DefaultValueAttribute.Val
 public class ToDefaultValueAttribute : MutationAttribute
 ```
 
+#### Remarks
+
+The *ToDefaultValueAttribute* replaces any values that are specified in *Values* with the associated *DefaultValueAttribute.Value* or the type's default value.
+
+If no *Values* are specified, the type's default value will be replaced with the associated *DefaultValueAttribute.Value*.
+
 
 ### Constructors
 

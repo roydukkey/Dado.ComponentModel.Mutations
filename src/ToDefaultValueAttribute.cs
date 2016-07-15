@@ -10,6 +10,12 @@ namespace System.ComponentModel.DataMutations
 	/// <summary>
 	///		Used to mutate the specified values to the associated <see cref="DefaultValueAttribute.Value" /> or the type's default value.
 	/// </summary>
+	/// <remarks>
+	///		The <see cref="ToDefaultValueAttribute" /> replaces any values that are specified in <see cref="Values" /> with the associated <see cref="DefaultValueAttribute.Value" /> or the type's default value.
+	///		<para>
+	///			If no <see cref="Values" /> are specified, the type's default value will be replaced with the associated <see cref="DefaultValueAttribute.Value" />.
+	///		</para>
+	/// </remarks>
 	[AttributeUsage(AttributeTargets.Property)]
 	public class ToDefaultValueAttribute : MutationAttribute
 	{
@@ -18,16 +24,14 @@ namespace System.ComponentModel.DataMutations
 		/// <summary>
 		/// 	Initializes a new instance of the <see cref="ToDefaultValueAttribute" /> class.
 		/// </summary>
-		/// <param name="value">The value that should be made default.</param>
-		/// <param name="additional">Additional values to make default.</param>
-		public ToDefaultValueAttribute(object value, params object[] additional)
+		/// <param name="values">An array of values that should be made default.</param>
+		public ToDefaultValueAttribute(params object[] values)
 		{
-			if (additional == null) {
-				Values = new[] { null, value };
-			}
-			else {
-				Values = new[] { value }.Concat(additional);
-			}
+			Values = values == null
+				? new[] { values }
+				: values.Count() == 0
+					? null
+					: values;
 		}
 
 		#endregion Constructors
@@ -56,23 +60,27 @@ namespace System.ComponentModel.DataMutations
 		/// <returns>The type's default value when the specified <paramref name="value" /> is in <see cref="Values" />.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			foreach (var testValue in Values) {
-				if (testValue == value || (testValue != null && testValue.Equals(value))) {
-					var attribute = context?.Attributes.FirstOrDefault(x => x is DefaultValueAttribute) as DefaultValueAttribute;
+			object defaultValue = null;
 
-					if (attribute != null) {
-						value = attribute.Value;
+			if(value != null) {
+				var type = value.GetType();
+
+				if (type.GetTypeInfo().IsValueType) {
+					// Is there better way to get the default value?
+					defaultValue = Activator.CreateInstance(type);
+				}
+			}
+
+			if (Values == null) {
+				if (value == defaultValue || value.Equals(defaultValue)) {
+					value = TryGetAttributeValue(context, defaultValue);
+				}
+			}
+			else {
+				foreach (var testValue in Values) {
+					if (value == testValue || value != null && value.Equals(testValue)) {
+						value = TryGetAttributeValue(context, defaultValue);
 					}
-					else {
-						// Is there better way? Should the use a DefaultValueAttribute be required when using this attribute?
-						var type = value.GetType();
-
-						value = type.GetTypeInfo().IsValueType
-							? Activator.CreateInstance(type)
-							: null;
-					}
-
-					break;
 				}
 			}
 
@@ -80,5 +88,16 @@ namespace System.ComponentModel.DataMutations
 		}
 
 		#endregion Protected Methods
+
+		#region Private Methods
+
+		private object TryGetAttributeValue(IMutationContext context, object defaultValue)
+		{
+			var attribute = context?.Attributes.FirstOrDefault(x => x is DefaultValueAttribute) as DefaultValueAttribute;
+
+			return attribute != null ? attribute.Value : defaultValue;
+		}
+
+		#endregion Private Methods
 	}
 }

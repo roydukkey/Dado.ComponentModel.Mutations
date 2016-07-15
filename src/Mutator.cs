@@ -226,7 +226,7 @@ namespace System.ComponentModel.DataMutations
 			if (attributes.Any()) {
 				value = GetMutatedValue(propertyContext, attributes, value);
 
-				if (inferValue) {
+				if (inferValue && CanBeAssigned(property.PropertyType, value)) {
 					property.SetValue(context.ObjectInstance, value);
 				}
 			}
