@@ -29,7 +29,7 @@ namespace System.ComponentModel.DataMutations
 	///		Used to mutate a specified string in which all leading and/or trailing occurrences of a set of specified characters are removed.
 	/// </summary>
 	/// <remarks>
-	///		The Trim method removes from the specified string all leading and/or trailing characters that are specified in <see cref="Characters" />. Each leading and trailing trim operation stops when a character that is not in <see cref="Characters" /> is encountered. For example, if the string is "123abc456xyz789" and <see cref="Characters" /> contains the digits from "1" through "9", the resulting string is "abc456xyz".
+	///		The Trim attribute removes from the specified string all leading and/or trailing characters that are specified in <see cref="Characters" />. Each leading and trailing trim operation stops when a character that is not in <see cref="Characters" /> is encountered. For example, if the string is "123abc456xyz789" and <see cref="Characters" /> contains the digits from "1" through "9", the resulting string is "abc456xyz".
 	///		<para>
 	///			If the specified string equals <see cref="String.Empty" /> or all the characters in the string consist of characters in the <see cref="Characters" /> array, the resulting string is <see cref="String.Empty" />.
 	///		</para>

@@ -14,7 +14,7 @@ public class TrimAttribute : MutationAttribute
 
 #### Remarks
 
-The Trim method removes from the specified string all leading and/or trailing characters that are specified in *Characters*. Each leading and trailing trim operation stops when a character that is not in *Characters* is encountered. For example, if the string is "123abc456xyz789" and *Characters* contains the digits from "1" through "9", the resulting string is "abc456xyz".
+The Trim attribute removes from the specified string all leading and/or trailing characters that are specified in *Characters*. Each leading and trailing trim operation stops when a character that is not in *Characters* is encountered. For example, if the string is "123abc456xyz789" and *Characters* contains the digits from "1" through "9", the resulting string is "abc456xyz".
 
 If the specified string equals *Empty* or all the characters in the string consist of characters in the *Characters* array, the resulting string is *Empty*.
 
