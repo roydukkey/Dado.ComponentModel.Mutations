@@ -62,7 +62,7 @@ namespace System.ComponentModel.DataMutations
 		{
 			object defaultValue = null;
 
-			if(value != null) {
+			if (value != null) {
 				var type = value.GetType();
 
 				if (type.GetTypeInfo().IsValueType) {
@@ -78,7 +78,7 @@ namespace System.ComponentModel.DataMutations
 			}
 			else {
 				foreach (var testValue in Values) {
-					if (value == testValue || value != null && value.Equals(testValue)) {
+					if (value == testValue || (value != null && value.Equals(testValue))) {
 						value = TryGetAttributeValue(context, defaultValue);
 					}
 				}
@@ -91,6 +91,12 @@ namespace System.ComponentModel.DataMutations
 
 		#region Private Methods
 
+		/// <summary>
+		///		Tries to determine the default value from a <see cref="DefaultValueAttribute" />.
+		/// </summary>
+		/// <param name="context">Describes the value being mutated and provides services and context for mutation.</param>
+		/// <param name="defaultValue">The value to be used when a value is not specified by an attribute.</param>
+		/// <returns>The value of an associated <see cref="DefaultValueAttribute" />, otherwise the value specified by <paramref name="defaultValue" />.</returns>
 		private object TryGetAttributeValue(IMutationContext context, object defaultValue)
 		{
 			var attribute = context?.Attributes.FirstOrDefault(x => x is DefaultValueAttribute) as DefaultValueAttribute;
