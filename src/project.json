@@ -2,8 +2,12 @@
 	"version": "0.4.0",
 	"description": "Provides attritubes that are used to help ensure data integrity for objects used as data sources.",
 	"packOptions": {
-		"type": "git",
-		"url": "git://github.com/roydukkey/Dado.ComponentModel.Mutations"
+		"licenseUrl": "https://raw.githubusercontent.com/roydukkey/Dado.ComponentModel.Mutations/master/LICENSE",
+		"requireLicenseAcceptance": true,
+		"repository": {
+			"type": "git",
+			"url": "https://github.com/roydukkey/Dado.ComponentModel.Mutations"
+		}
 	},
 
 	"authors": [ "roydukkey" ],
@@ -27,6 +31,7 @@
 	},
 
 	"buildOptions": {
+		"outputName": "Dado.ComponentModel.Mutations",
 		"allowUnsafe": true,
 		"keyFile": "../../_tools/roydukkey.snk",
 		"xmlDoc": true
