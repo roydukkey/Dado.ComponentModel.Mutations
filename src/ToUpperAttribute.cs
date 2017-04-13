@@ -1,9 +1,10 @@
 ﻿// Copyright (c) roydukkey. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using System;
 using System.Globalization;
 
-namespace System.ComponentModel.DataMutations
+namespace Dado.ComponentModel.DataMutations
 {
 	/// <summary>
 	///		Used to mutate the specified string or char to a uppercase.
@@ -14,7 +15,7 @@ namespace System.ComponentModel.DataMutations
 		#region Properties
 
 		/// <summary>
-		///		Gets or sets the <see cref="Globalization.CultureInfo" /> to be used when determining the appropriate case.
+		///		Gets or sets the <see cref="System.Globalization.CultureInfo" /> to be used when determining the appropriate case.
 		/// </summary>
 		public CultureInfo CultureInfo { get; set; } = CultureInfo.CurrentCulture;
 

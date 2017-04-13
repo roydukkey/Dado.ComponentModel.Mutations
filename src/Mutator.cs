@@ -1,12 +1,13 @@
 ﻿// Copyright (c) roydukkey. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace System.ComponentModel.DataMutations
+namespace Dado.ComponentModel.DataMutations
 {
 	/// <summary>
 	///		Helper class to validate objects, properties, and other values using their associated <see cref="MutationAttribute" />s and custom mutation as implemented through the <see cref="IMutableObject" /> interface.

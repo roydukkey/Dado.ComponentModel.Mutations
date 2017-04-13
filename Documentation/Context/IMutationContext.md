@@ -2,7 +2,7 @@
 
 Describes the context in which mutation is performed.
 
-**Namespace:** System.ComponentModel.DataMutations<br />
+**Namespace:** Dado.ComponentModel.DataMutations<br />
 **Implements:** System.IServiceProvider (in System.ComponentModel)
 
 #### Syntax

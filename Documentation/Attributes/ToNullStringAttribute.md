@@ -2,8 +2,8 @@
 
 Used to mutate the a string to **null** when its value is empty or whitespace.
 
-**Namespace:** System.ComponentModel.DataMutations<br />
-**Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)
+**Namespace:** Dado.ComponentModel.DataMutations<br />
+**Implements:** Dado.ComponentModel.DataMutations.MutationAttribute (in Dado.ComponentModel.Mutations)
 
 #### Syntax
 
@@ -70,5 +70,5 @@ protected override object MutateValue(
 	<dt>value</dt>
 	<dd>Type: System.Object<br />The value to mutate.</dd>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
 </dl>

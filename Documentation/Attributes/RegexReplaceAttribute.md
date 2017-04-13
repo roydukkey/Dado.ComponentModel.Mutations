@@ -2,8 +2,8 @@
 
 Used to mutate a string replacing all strings that match a regular expression pattern with a specified replacement string.
 
-**Namespace:** System.ComponentModel.DataMutations<br />
-**Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)
+**Namespace:** Dado.ComponentModel.DataMutations<br />
+**Implements:** Dado.ComponentModel.DataMutations.MutationAttribute (in Dado.ComponentModel.Mutations)
 
 #### Syntax
 
@@ -144,5 +144,5 @@ A new string that is identical to the input string, except that the replacement 
 	<dt>value</dt>
 	<dd>Type: System.Object<br />The value to mutate.</dd>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
 </dl>

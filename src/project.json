@@ -3,7 +3,7 @@
 	"description": "Provides attritubes that are used to help ensure data integrity for objects used as data sources.",
 	"packOptions": {
 		"type": "git",
-		"url": "git://github.com/roydukkey/System.ComponentModel.Mutations"
+		"url": "git://github.com/roydukkey/Dado.ComponentModel.Mutations"
 	},
 
 	"authors": [ "roydukkey" ],

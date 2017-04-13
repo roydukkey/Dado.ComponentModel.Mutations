@@ -1,11 +1,12 @@
 ﻿// Copyright (c) roydukkey. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace System.ComponentModel.DataMutations
+namespace Dado.ComponentModel.DataMutations
 {
 	/// <summary>
 	///		Used to mutate a string replacing all strings that match a regular expression pattern with a specified replacement string.

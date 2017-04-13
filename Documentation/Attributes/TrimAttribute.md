@@ -2,8 +2,8 @@
 
 Used to mutate a specified string in which all leading and/or trailing occurrences of a set of specified characters are removed.
 
-**Namespace:** System.ComponentModel.DataMutations<br />
-**Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)
+**Namespace:** Dado.ComponentModel.DataMutations<br />
+**Implements:** Dado.ComponentModel.DataMutations.MutationAttribute (in Dado.ComponentModel.Mutations)
 
 #### Syntax
 
@@ -96,7 +96,7 @@ public TrimOptions Direction { get; set; }
 
 <dl>
 	<dt>Type</dt>
-	<dd>System.ComponentModel.DataMutations.TrimOptions</dd>
+	<dd>Dado.ComponentModel.DataMutations.TrimOptions</dd>
 </dl>
 
 
@@ -141,5 +141,5 @@ The string that remains after all occurrences of the characters in the the *Char
 	<dt>value</dt>
 	<dd>Type: System.Object<br />The value to mutate.</dd>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
 </dl>

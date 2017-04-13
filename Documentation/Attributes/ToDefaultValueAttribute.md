@@ -2,8 +2,8 @@
 
 Used to mutate the specified values to the associated *DefaultValueAttribute.Value* or the type's default value.
 
-**Namespace:** System.ComponentModel.DataMutations<br />
-**Implements:** System.ComponentModel.DataMutations.MutationAttribute (in System.ComponentModel.Mutations)
+**Namespace:** Dado.ComponentModel.DataMutations<br />
+**Implements:** Dado.ComponentModel.DataMutations.MutationAttribute (in Dado.ComponentModel.Mutations)
 
 #### Syntax
 
@@ -125,5 +125,5 @@ The type's default value when the specified `value` is in *Values*.
 	<dt>value</dt>
 	<dd>Type: System.Object<br />The value to mutate.</dd>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
 </dl>

@@ -2,7 +2,7 @@
 
 Base class for all mutation attributes.
 
-**Namespace:** System.ComponentModel.DataMutations<br />
+**Namespace:** Dado.ComponentModel.DataMutations<br />
 **Implements:** System.Attribute (in System)
 
 #### Syntax
@@ -86,7 +86,7 @@ The resulting mutated value.
 	<dt>value</dt>
 	<dd>Type: System.Object<br />The value to mutate.</dd>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
 </dl>
 
 #### Exceptions
@@ -120,5 +120,5 @@ The resulting mutated value.
 	<dt>value</dt>
 	<dd>Type: System.Object<br />The value to mutate.</dd>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
 </dl>

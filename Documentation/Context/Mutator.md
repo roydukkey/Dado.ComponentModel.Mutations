@@ -2,7 +2,7 @@
 
 Helper class to validate objects, properties, and other values using their associated MutationAttributes and custom mutation as implemented through the IMutableObject interface.
 
-**Namespace:** System.ComponentModel.DataMutations
+**Namespace:** Dado.ComponentModel.DataMutations
 
 #### Syntax
 
@@ -53,7 +53,7 @@ The object whose value and properties has been modified according to any associa
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 </dl>
 
 #### Exceptions
@@ -90,9 +90,9 @@ The object whose value and/or properties has been modified according to any asso
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>attributes</dt>
-	<dd>Type: System.Collections.Generic.IEnumerable&lt;System.ComponentModel.DataMutations.MutationAttribute&gt;<br />The list of <em>MutationAttribute</em>s to modify the specified <em>ObjectInstance</em> against.</dd>
+	<dd>Type: System.Collections.Generic.IEnumerable&lt;Dado.ComponentModel.DataMutations.MutationAttribute&gt;<br />The list of <em>MutationAttribute</em>s to modify the specified <em>ObjectInstance</em> against.</dd>
 </dl>
 
 #### Exceptions
@@ -138,9 +138,9 @@ The value that has been modified according to any associated *MutationAttribute*
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>attributes</dt>
-	<dd>Type: System.Collections.Generic.IEnumerable&lt;System.ComponentModel.DataMutations.MutationAttribute&gt;<br />The list of <em>MutationAttribute</em>s to modify the specified <code>value</code> against.</dd>
+	<dd>Type: System.Collections.Generic.IEnumerable&lt;Dado.ComponentModel.DataMutations.MutationAttribute&gt;<br />The list of <em>MutationAttribute</em>s to modify the specified <code>value</code> against.</dd>
 	<dt>value</dt>
 	<dd>Type: `T<br />The value to be mutated.</dd>
 </dl>
@@ -181,7 +181,7 @@ The object whose value and/or properties has been modified according to any asso
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>instance</dt>
 	<dd>Type: `T<br />The instance to be modified.</dd>
 </dl>
@@ -223,11 +223,11 @@ The object whose value and properties has been modified according to any associa
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>instance</dt>
 	<dd>Type: `T<br />The instance to be modified.</dd>
 	<dt>attributes</dt>
-	<dd>Type: System.Collections.Generic.IEnumerable&lt;System.ComponentModel.DataMutations.MutationAttribute&gt;<br />The list of <em>MutationAttribute</em>s to modify the specified <code>instance</code> against.</dd>
+	<dd>Type: System.Collections.Generic.IEnumerable&lt;Dado.ComponentModel.DataMutations.MutationAttribute&gt;<br />The list of <em>MutationAttribute</em>s to modify the specified <code>instance</code> against.</dd>
 </dl>
 
 #### Exceptions
@@ -266,7 +266,7 @@ The property value that has been modified according to any associated *MutationA
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>property</dt>
 	<dd>Type: System.Reflection.PropertyInfo<br />The property info that describes the member to be modified.</dd>
 </dl>
@@ -311,7 +311,7 @@ The value that has been modified according to any *MutationAttribute*s associate
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>property</dt>
 	<dd>Type: System.Reflection.PropertyInfo<br />The property info that describes the <code>value</code> to be modified.</dd>
 	<dt>value</dt>
@@ -357,7 +357,7 @@ The property value that has been modified according to any associated *MutationA
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>property</dt>
 	<dd>Type: System.Linq.Expressions.Expression&lt;System.Func&lt;`T, `P&gt;&gt;<br />The expression that selects the property to be modified.</dd>
 </dl>
@@ -403,7 +403,7 @@ The value that has been modified according to any *MutationAttribute*s associate
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.MutationContext&lt;`T&gt;<br />Describes the type of object being mutated and provides services and context for mutation.</dd>
 	<dt>property</dt>
 	<dd>Type: System.Linq.Expressions.Expression&lt;System.Func&lt;`T, `P&gt;&gt;<br />The expression that selects the property that describes the `value` to be modified.</dd>
 	<dt>value</dt>

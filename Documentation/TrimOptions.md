@@ -2,7 +2,7 @@
 
 Enumeration of trimming options that may be used for the mutation of *TrimAttribute*s.
 
-**Namespace:** System.ComponentModel.DataMutations
+**Namespace:** Dado.ComponentModel.DataMutations
 
 #### Syntax
 

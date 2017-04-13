@@ -1,4 +1,4 @@
-# System.ComponentModel.Mutations
+# Dado.ComponentModel.Mutations
 
 Provides attributes that are used to help ensure data integrity for objects used as data sources.
 
@@ -32,7 +32,7 @@ public class User
 Altering the example to use a mutation attributes will produce the following code.
 
 ```csharp
-using System.ComponentModel.DataMutations;
+using Dado.ComponentModel.DataMutations;
 
 public class User
 {
@@ -58,4 +58,4 @@ Unit testing will be provided after a stable RTM has been published for .NET Cor
 
 ## License
 
-System.ComponentModel.Mutations is licensed under the [Apache License, Version 2.0](LICENSE).
+Dado.ComponentModel.Mutations is licensed under the [Apache License, Version 2.0](LICENSE).

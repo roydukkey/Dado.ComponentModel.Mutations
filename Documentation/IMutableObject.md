@@ -2,7 +2,7 @@
 
 Describes custom mutation logic that should be preformed on an object during mutation.
 
-**Namespace:** System.ComponentModel.DataMutations
+**Namespace:** Dado.ComponentModel.DataMutations
 
 #### Syntax
 
@@ -34,5 +34,5 @@ void Mutate(
 
 <dl>
 	<dt>context</dt>
-	<dd>Type: System.ComponentModel.DataMutations.IMutationContext<br />Describes the object being mutated and provides services and context for mutation.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the object being mutated and provides services and context for mutation.</dd>
 </dl>
