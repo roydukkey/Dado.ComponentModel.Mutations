@@ -13,6 +13,10 @@
 		<AssemblyOriginatorKeyFile>..\..\..\_tools\roydukkey.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
+		<PackageReference Include="System.ComponentModel" Version="4.0.1" />
+	</ItemGroup>
+	
 	<ItemGroup>
 		<Content Include="..\..\$(Product).license.txt">
 			<PackagePath>\;</PackagePath>
