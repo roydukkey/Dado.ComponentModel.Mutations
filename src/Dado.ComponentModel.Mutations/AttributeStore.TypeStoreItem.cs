@@ -69,7 +69,9 @@ namespace Dado.ComponentModel.DataMutations
 
 				if (_propertyStoreItems == null) {
 					lock (_syncRoot) {
-						_propertyStoreItems = CreatePropertyStoreItems();
+						if (_propertyStoreItems == null) {
+							_propertyStoreItems = CreatePropertyStoreItems();
+						}
 					}
 				}
 
