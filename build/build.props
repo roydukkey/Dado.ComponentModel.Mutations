@@ -1,0 +1,30 @@
+<Project>
+	<PropertyGroup>
+		<Product>Dado.ComponentModel.Mutations</Product>
+		<Copyright>Licensed under the Apache License, Version 2.0</Copyright>
+		<Authors>roydukkey</Authors>
+		<PackageDescription>Provides attributes that are used to help ensure data integrity for objects used as data sources.</PackageDescription>
+		<PackageTags>System.ComponentModel ComponentModel DataMutations DataAnnotations Data Annotations</PackageTags>
+
+		<PackageProjectUrl>https://github.com/roydukkey/Dado.ComponentModel.Mutations/</PackageProjectUrl>
+		<PackageLicenseUrl>https://raw.githubusercontent.com/roydukkey/Dado.ComponentModel.Mutations/master/LICENSE</PackageLicenseUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<RepositoryUrl>https://github.com/roydukkey/Dado.ComponentModel.Mutations.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<VersionMajor Condition="'$(VersionMajor)' == ''">0</VersionMajor>
+		<VersionMinor Condition="'$(VersionMinor)' == ''">4</VersionMinor>
+		<VersionPatch Condition="'$(VersionPatch)' == ''">0</VersionPatch>
+		<VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
+
+		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch)</VersionPrefix>
+		<AssemblyVersion>$(VersionMajor).$(VersionMinor).0.0</AssemblyVersion>
+		<FileVersion>$(VersionPrefix).0</FileVersion>
+		
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<TreatSpecificWarningsAsErrors />
+    
+		<DisableImplicitPackageTargetFallback>True</DisableImplicitPackageTargetFallback>
+	</PropertyGroup>
+</Project>
