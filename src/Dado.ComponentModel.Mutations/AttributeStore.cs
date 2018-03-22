@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -83,9 +84,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>The type store item. It will not be <c>null</c>.</returns>
 		private TypeStoreItem GetTypeStoreItem(Type type)
 		{
-			if (type == null) {
-				throw new ArgumentNullException(nameof(type));
-			}
+			Debug.Assert(type != null);
 
 			lock (_typeStoreItems) {
 				TypeStoreItem item = null;
