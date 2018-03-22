@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\build\build.props" />
+	
+	<PropertyGroup>
+		<TargetFrameworks>net461;netstandard2.0;netstandard1.4</TargetFrameworks>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageOutputPath>..\..\</PackageOutputPath>
+		<!--
+			sn -Tp Dado.ComponentModel.Mutations
+			>> Public key token is bd8a1b36cdb64583
+		-->
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\..\..\_tools\roydukkey.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\..\$(Product).license.txt">
+			<PackagePath>\;</PackagePath>
+			<Pack>true</Pack>
+			<Visible>false</Visible>
+		</Content>
+		<Content Include="..\..\README.md">
+			<PackagePath>\$(Product).readme.md;</PackagePath>
+			<Pack>true</Pack>
+			<Visible>false</Visible>
+		</Content>
+	</ItemGroup>
+
+	<Target Name="CopyLicense" BeforeTargets="GenerateNuspec">
+		<Copy SourceFiles="..\..\LICENSE" DestinationFiles="..\..\$(Product).license.txt" />
+		<Message Importance="high" Text="Copy 'LICSENSE' to '$(Product).license.txt'" />
+	</Target>
+
+	<Target Name="DeleteLicenseCopy" AfterTargets="GenerateNuspec">
+		<Delete Files="..\..\$(Product).license.txt" />
+		<Message Importance="high" Text="Delete '$(Product).license.txt'" />
+	</Target>
+</Project>

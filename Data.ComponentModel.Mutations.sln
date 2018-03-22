@@ -1,22 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A6F46F0-B703-45BC-AB96-E649C21C7879}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		build\build.props = build\build.props
 		CONTRIBUTING.md = CONTRIBUTING.md
-		global.json = global.json
 		LICENSE = LICENSE
-		NuGet.config = NuGet.config
 		README.md = README.md
 		Settings.StyleCop = Settings.StyleCop
 	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "src", "src\src.xproj", "{4760D976-3292-4CB9-B9FC-3A394D287656}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E89D5C60-2ADE-4CF7-867D-4D3DE8AD23CF}"
 	ProjectSection(SolutionItems) = preProject
@@ -45,16 +42,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{B1EA
 		Documentation\Context\Mutator.md = Documentation\Context\Mutator.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dado.ComponentModel.Mutations", "src\Dado.ComponentModel.Mutations\Dado.ComponentModel.Mutations.csproj", "{1461C3FB-E239-43B4-84FD-230B741BF0F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4760D976-3292-4CB9-B9FC-3A394D287656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4760D976-3292-4CB9-B9FC-3A394D287656}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4760D976-3292-4CB9-B9FC-3A394D287656}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4760D976-3292-4CB9-B9FC-3A394D287656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1461C3FB-E239-43B4-84FD-230B741BF0F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1461C3FB-E239-43B4-84FD-230B741BF0F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1461C3FB-E239-43B4-84FD-230B741BF0F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1461C3FB-E239-43B4-84FD-230B741BF0F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +61,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9AA0FD0E-80EF-457B-8BC8-19A3F53FBB98} = {E89D5C60-2ADE-4CF7-867D-4D3DE8AD23CF}
 		{B1EA5C59-0437-4374-A5C2-C2E76F350478} = {E89D5C60-2ADE-4CF7-867D-4D3DE8AD23CF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {994789FE-C13D-4833-935D-D97E06C6B516}
 	EndGlobalSection
 EndGlobal
