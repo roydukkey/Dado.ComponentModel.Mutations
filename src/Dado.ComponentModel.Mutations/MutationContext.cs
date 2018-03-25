@@ -142,9 +142,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <param name="serviceType">The type of the service needed.</param>
 		/// <returns>An instance of that service or <c>null</c> if it is not available.</returns>
 		public object GetService(Type serviceType)
-			=> _serviceProvider != null
-				? _serviceProvider(serviceType)
-				: null;
+			=> _serviceProvider?.Invoke(serviceType);
 
 		#endregion Public Methods
 	}
