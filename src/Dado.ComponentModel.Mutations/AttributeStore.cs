@@ -18,7 +18,6 @@ namespace Dado.ComponentModel.DataMutations
 	{
 		#region Fields
 
-		private static readonly AttributeStore _Singleton = new AttributeStore();
 		private readonly Dictionary<Type, TypeStoreItem> _typeStoreItems = new Dictionary<Type, TypeStoreItem>();
 
 		#endregion Fields
@@ -28,7 +27,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets the singleton <see cref="AttributeStore" />.
 		/// </summary>
-		internal static AttributeStore Instance => _Singleton;
+		internal static AttributeStore Instance { get; } = new AttributeStore();
 
 		#endregion Properties
 

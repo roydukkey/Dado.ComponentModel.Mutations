@@ -14,12 +14,6 @@ namespace Dado.ComponentModel.DataMutations
 		/// </summary>
 		private class PropertyStoreItem : StoreItem
 		{
-			#region Fields
-
-			private readonly Type _type;
-
-			#endregion Fields
-
 			#region Constructors
 
 			/// <summary>
@@ -30,7 +24,7 @@ namespace Dado.ComponentModel.DataMutations
 			internal PropertyStoreItem(Type type, IEnumerable<Attribute> attributes) : base(attributes)
 			{
 				Debug.Assert(type != null);
-				_type = type;
+				PropertyType = type;
 			}
 
 			#endregion Constructors
@@ -40,7 +34,7 @@ namespace Dado.ComponentModel.DataMutations
 			/// <summary>
 			///		Gets the property type.
 			/// </summary>
-			internal Type PropertyType => _type;
+			internal Type PropertyType { get; }
 
 			#endregion Properties
 		}

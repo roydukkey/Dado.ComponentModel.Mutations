@@ -14,12 +14,6 @@ namespace Dado.ComponentModel.DataMutations
 		/// </summary>
 		private abstract class StoreItem
 		{
-			#region Fields
-
-			private readonly IEnumerable<Attribute> _attributes;
-
-			#endregion Fields
-
 			#region Constructors
 
 			/// <summary>
@@ -28,7 +22,7 @@ namespace Dado.ComponentModel.DataMutations
 			/// <param name="attributes">The attributes to associated with this <see cref="StoreItem" />.</param>
 			internal StoreItem(IEnumerable<Attribute> attributes)
 			{
-				_attributes = attributes;
+				Attributes = attributes;
 			}
 
 			#endregion Constructors
@@ -38,7 +32,7 @@ namespace Dado.ComponentModel.DataMutations
 			/// <summary>
 			///		Gets the attributes associated with this <see cref="StoreItem" />.
 			/// </summary>
-			internal IEnumerable<Attribute> Attributes => _attributes;
+			internal IEnumerable<Attribute> Attributes { get; }
 
 			#endregion Properties
 		}

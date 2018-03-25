@@ -21,7 +21,6 @@ namespace Dado.ComponentModel.DataMutations
 		#region Fields
 
 		private readonly Dictionary<object, object> _items = new Dictionary<object, object>();
-		private readonly T _objectInstance;
 		private readonly IEnumerable<Attribute> _attributes;
 		private Func<Type, object> _serviceProvider;
 
@@ -78,7 +77,7 @@ namespace Dado.ComponentModel.DataMutations
 				throw new ArgumentNullException(nameof(instance));
 			}
 
-			_objectInstance = instance;
+			ObjectInstance = instance;
 			_attributes = new List<Attribute>(attributes ?? AttributeStore.Instance.GetTypeAttributes(this));
 
 			if (serviceProvider != null) {
@@ -103,12 +102,12 @@ namespace Dado.ComponentModel.DataMutations
 		/// <remarks>
 		///		During mutation, especially property-level mutation, the instance might be in an indeterminate state. For example, the property being mutated, as well as other properties on the instance might not have been updated to their new values.
 		/// </remarks>
-		public T ObjectInstance => _objectInstance;
+		public T ObjectInstance { get; }
 
 		/// <summary>
 		///		Gets the instance being mutated.
 		/// </summary>
-		object IMutationContext.ObjectInstance => _objectInstance;
+		object IMutationContext.ObjectInstance => ObjectInstance;
 
 		/// <summary>
 		///		Gets the dictionary of key/value pairs associated with this context.
