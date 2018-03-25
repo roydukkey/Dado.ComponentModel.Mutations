@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 namespace Dado.ComponentModel.DataMutations
@@ -28,6 +29,7 @@ namespace Dado.ComponentModel.DataMutations
 			/// <param name="attributes">The attributes associated with the property type.</param>
 			internal PropertyStoreItem(Type type, IEnumerable<Attribute> attributes) : base(attributes)
 			{
+				Debug.Assert(type != null);
 				_type = type;
 			}
 

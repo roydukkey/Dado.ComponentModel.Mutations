@@ -330,12 +330,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns><c>true</c> if the assignment is legal, otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">When <paramref name="destinationType" /> is <c>null</c>.</exception>
 		private static bool CanBeAssigned(Type destinationType, object value)
-		{
-			if (destinationType == null) {
-				throw new ArgumentNullException(nameof(destinationType));
-			}
-
-			return value == null
+			=> value == null
 
 				// Null can be assigned only to reference types or Nullable or Nullable<>
 				? !destinationType.GetTypeInfo().IsValueType || (
@@ -344,7 +339,6 @@ namespace Dado.ComponentModel.DataMutations
 
 				// Not null -- be sure it can be cast to the right type
 				: destinationType.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo());
-		}
 
 		#endregion Private Methods
 	}
