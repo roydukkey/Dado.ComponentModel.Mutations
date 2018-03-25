@@ -18,5 +18,5 @@ trim_trailing_whitespace = true
 # Shell scripts
 [*.sh]
 end_of_line = lf
-[*.{cmd, bat}]
+[*.{cmd,bat}]
 end_of_line = crlf
