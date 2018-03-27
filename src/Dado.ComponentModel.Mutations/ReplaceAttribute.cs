@@ -43,7 +43,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets the values to replace in a string.
 		/// </summary>
-		public IEnumerable<string> Antecedents { get; private set; }
+		public IEnumerable<string> Antecedents { get; }
 
 		/// <summary>
 		///		Gets or sets the string to replace all occurrences of the specified <see cref="Antecedents" />.

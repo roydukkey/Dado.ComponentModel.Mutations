@@ -44,7 +44,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets the values to make default.
 		/// </summary>
-		public IEnumerable<object> Values { get; private set; }
+		public IEnumerable<object> Values { get; }
 
 		/// <summary>
 		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>50</c>.

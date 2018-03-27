@@ -61,7 +61,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets an array of Unicode characters to remove.
 		/// </summary>
-		public char[] Characters { get; private set; }
+		public char[] Characters { get; }
 
 		/// <summary>
 		///		Gets or sets a value indicating the trimming direction.

@@ -22,7 +22,6 @@ namespace Dado.ComponentModel.DataMutations
 		#region Fields
 
 		private readonly Dictionary<object, object> _items = new Dictionary<object, object>();
-		private readonly IEnumerable<Attribute> _attributes;
 		private Func<Type, object> _serviceProvider;
 
 		#endregion Fields
@@ -79,7 +78,7 @@ namespace Dado.ComponentModel.DataMutations
 			}
 
 			ObjectInstance = instance;
-			_attributes = new List<Attribute>(attributes ?? AttributeStore.Instance.GetTypeAttributes(this));
+			Attributes = new List<Attribute>(attributes ?? AttributeStore.Instance.GetTypeAttributes(this));
 
 			if (serviceProvider != null) {
 				InitializeServiceProvider(serviceType => serviceProvider.GetService(serviceType));
@@ -121,7 +120,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets the attributes associated with this context.
 		/// </summary>
-		public IEnumerable<Attribute> Attributes => _attributes;
+		public IEnumerable<Attribute> Attributes { get; }
 
 		#endregion Properties
 

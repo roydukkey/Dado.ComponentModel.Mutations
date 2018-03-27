@@ -44,7 +44,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets the regular expression pattern to match in a string.
 		/// </summary>
-		public IEnumerable<string> Patterns { get; private set; }
+		public IEnumerable<string> Patterns { get; }
 
 		/// <summary>
 		///		Gets or sets the replacement pattern that will be used to replace each match of the specified <see cref="Patterns" />.
