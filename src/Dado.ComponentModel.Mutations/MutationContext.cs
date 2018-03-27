@@ -21,7 +21,7 @@ namespace Dado.ComponentModel.DataMutations
 	{
 		#region Fields
 
-		private readonly Dictionary<object, object> _items = new Dictionary<object, object>();
+		private readonly Dictionary<object, object> _items;
 		private Func<Type, object> _serviceProvider;
 
 		#endregion Fields
@@ -84,9 +84,7 @@ namespace Dado.ComponentModel.DataMutations
 				InitializeServiceProvider(serviceType => serviceProvider.GetService(serviceType));
 			}
 
-			if (items != null) {
-				_items = new Dictionary<object, object>(items);
-			}
+			_items = items != null ? new Dictionary<object, object>(items) : new Dictionary<object, object>();
 		}
 
 		#endregion Constructors

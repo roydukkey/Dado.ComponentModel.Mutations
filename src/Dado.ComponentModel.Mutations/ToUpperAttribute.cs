@@ -37,18 +37,12 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>The specified <paramref name="value" /> converted to uppercase.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value != null) {
-				var newString = value as string;
+			if (value is string valueAsString && !String.IsNullOrWhiteSpace(valueAsString)) {
+				return CultureInfo.TextInfo.ToUpper(valueAsString);
+			}
 
-				if (newString != null) {
-					return CultureInfo.TextInfo.ToUpper(newString);
-				}
-
-				if (value is Char) {
-					var newChar = (char)value;
-
-					return CultureInfo.TextInfo.ToUpper(newChar);
-				}
+			if (value is char valueAsChar) {
+				return CultureInfo.TextInfo.ToUpper(valueAsChar);
 			}
 
 			return value;

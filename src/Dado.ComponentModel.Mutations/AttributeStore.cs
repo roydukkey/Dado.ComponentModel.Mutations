@@ -87,9 +87,7 @@ namespace Dado.ComponentModel.DataMutations
 			Debug.Assert(type != null);
 
 			lock (_typeStoreItems) {
-				TypeStoreItem item = null;
-
-				if (!_typeStoreItems.TryGetValue(type, out item)) {
+				if (!_typeStoreItems.TryGetValue(type, out TypeStoreItem item)) {
 					// Use CustomAttributeExtensions.GetCustomAttributes() to get inherited attributes as well as direct ones
 					var attributes = CustomAttributeExtensions.GetCustomAttributes(type.GetTypeInfo(), true);
 

@@ -62,13 +62,9 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>A string that is equivalent to the current <paramref name="value" /> except that all instances of specified <see cref="Antecedents" /> are replaced with the value of <see cref="Replacement" />. If none of the <see cref="Antecedents" /> are found in the current <paramref name="value" />, the method returns the current <paramref name="value" /> unchanged.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value != null) {
-				var newString = value as string;
-
-				if (newString != null) {
-					foreach (string antecedent in Antecedents) {
-						value = newString.Replace(antecedent, Replacement);
-					}
+			if (value != null && value is string valueAsString) {
+				foreach (string antecedent in Antecedents) {
+					value = valueAsString.Replace(antecedent, Replacement);
 				}
 			}
 

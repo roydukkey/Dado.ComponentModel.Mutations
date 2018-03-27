@@ -29,18 +29,10 @@ namespace Dado.ComponentModel.DataMutations
 		/// <param name="value">The value to mutate.</param>
 		/// <param name="context">Describes the <paramref name="value" /> being mutated and provides services and context for mutation.</param>
 		/// <returns><c>null</c> when the <paramref name="value" /> is empty or whitespace, otherwise the specified <paramref name="value" />.</returns>
-		protected override object MutateValue(object value, IMutationContext context)
-		{
-			if (value != null) {
-				var newString = value as string;
-
-				if (newString != null && String.IsNullOrWhiteSpace(newString)) {
-					return null;
-				}
-			}
-
-			return value;
-		}
+		protected override object MutateValue(object value, IMutationContext context) =>
+			value is string valueAsString && String.IsNullOrWhiteSpace(valueAsString)
+				? null
+				: value;
 
 		#endregion Protected Methods
 	}

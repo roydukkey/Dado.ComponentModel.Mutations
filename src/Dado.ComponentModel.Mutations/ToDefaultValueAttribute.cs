@@ -102,7 +102,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>The value of an associated <see cref="DefaultValueAttribute" />, otherwise the value specified by <paramref name="defaultValue" />.</returns>
 		private object TryGetAttributeValue(IMutationContext context, object defaultValue)
 		{
-			var attribute = context?.Attributes.FirstOrDefault(x => x is DefaultValueAttribute) as DefaultValueAttribute;
+			var attribute = context?.Attributes.OfType<DefaultValueAttribute>().FirstOrDefault();
 
 			return attribute != null ? attribute.Value : defaultValue;
 		}

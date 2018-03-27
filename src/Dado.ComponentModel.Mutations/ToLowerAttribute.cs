@@ -37,18 +37,12 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>The specified <paramref name="value" /> converted to lowercase.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value != null) {
-				var newString = value as string;
+			if (value is string valueAsString && !String.IsNullOrWhiteSpace(valueAsString)) {
+				return CultureInfo.TextInfo.ToLower(valueAsString);
+			}
 
-				if (newString != null) {
-					return CultureInfo.TextInfo.ToLower(newString);
-				}
-
-				if (value is Char) {
-					var newChar = (char)value;
-
-					return CultureInfo.TextInfo.ToLower(newChar);
-				}
+			if (value is char valueAsChar) {
+				return CultureInfo.TextInfo.ToLower(valueAsChar);
 			}
 
 			return value;

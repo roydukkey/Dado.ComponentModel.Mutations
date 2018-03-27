@@ -68,13 +68,9 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If the regular expression pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value != null) {
-				var newString = value as string;
-
-				if (newString != null) {
-					foreach (string pattern in Patterns) {
-						value = new Regex(pattern, Options).Replace(newString, Replacement);
-					}
+			if (value != null && value is string valueAsString) {
+				foreach (string pattern in Patterns) {
+					value = new Regex(pattern, Options).Replace(valueAsString, Replacement);
 				}
 			}
 

@@ -47,9 +47,7 @@ namespace Dado.ComponentModel.DataMutations
 			/// <returns>Returns a <see cref="PropertyStoreItem" />.</returns>
 			internal PropertyStoreItem GetPropertyStoreItem(string propertyName)
 			{
-				PropertyStoreItem item = null;
-
-				if (!TryGetPropertyStoreItem(propertyName, out item)) {
+				if (!TryGetPropertyStoreItem(propertyName, out PropertyStoreItem item)) {
 					throw new ArgumentException($"The type '{_type.Name}' does not contain a public property named '{propertyName}'.", nameof(propertyName));
 				}
 

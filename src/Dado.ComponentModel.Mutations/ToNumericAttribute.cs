@@ -37,44 +37,40 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>The resulting mutated value in the specified numeric format.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			if (value != null) {
-				var newString = value as string;
+			if (value is string valueAsString) {
+				if (String.IsNullOrWhiteSpace(valueAsString)) {
+					return null;
+				}
 
-				if (newString != null) {
-					if (String.IsNullOrWhiteSpace(newString)) {
+				string rgxMod = "";
+
+				if (PreserveFloatingPoint) {
+					rgxMod = ".";
+
+					int search = valueAsString.LastIndexOf('.');
+
+					if (search > -1) {
+						valueAsString = valueAsString.Substring(0, search).Replace(".", "") + valueAsString.Substring(search);
+					}
+				}
+
+				if (PreserveSign) {
+					rgxMod += "+-";
+				}
+
+				valueAsString = Regex.Replace(valueAsString, $"[^0-9{rgxMod}]", "");
+
+				if (PreserveSign && valueAsString.Length > 0) {
+					valueAsString = valueAsString[0] + Regex.Replace(valueAsString.Substring(1), "[+-]", "");
+
+					if (valueAsString.Length == 1 && valueAsString.IndexOfAny(new[] { '+', '-' }) == 0) {
 						return null;
 					}
-
-					string rgxMod = "";
-
-					if (PreserveFloatingPoint) {
-						rgxMod = ".";
-
-						int search = newString.LastIndexOf('.');
-
-						if (search > -1) {
-							newString = newString.Substring(0, search).Replace(".", "") + newString.Substring(search);
-						}
-					}
-
-					if (PreserveSign) {
-						rgxMod += "+-";
-					}
-
-					newString = Regex.Replace(newString, $"[^0-9{rgxMod}]", "");
-
-					if (PreserveSign && newString.Length > 0) {
-						newString = newString[0] + Regex.Replace(newString.Substring(1), "[+-]", "");
-
-						if (newString.Length == 1 && newString.IndexOfAny(new[] { '+', '-' }) == 0) {
-							return null;
-						}
-					}
-
-					return String.IsNullOrEmpty(newString) ? null : newString;
 				}
-			}
 
+				return String.IsNullOrEmpty(valueAsString) ? null : valueAsString;
+			}
+			
 			return value;
 		}
 
