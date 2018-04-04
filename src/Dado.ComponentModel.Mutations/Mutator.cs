@@ -246,7 +246,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>The object whose value and properties has been modified according to any associated <see cref="MutationAttribute" />s and <see cref="IMutableObject" /> implementation.</returns>
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		private static T GetMutatedObject<T>(MutationContext<T> context, bool inferValue, T instance = default(T))
-			=> GetMutatedObject(context, context.Attributes.OfType<MutationAttribute>(), inferValue, instance);
+			=> GetMutatedObject(context, context?.Attributes?.OfType<MutationAttribute>(), inferValue, instance);
 
 		/// <summary>
 		///		Mutates an object instance against the current context and the specified <see cref="MutationAttribute" />s.
@@ -272,10 +272,12 @@ namespace Dado.ComponentModel.DataMutations
 			instance = inferValue ? context.ObjectInstance : instance;
 
 			// Step 1: Mutate the object properties' mutation attributes
-			var properties = instance.GetType().GetRuntimeProperties().Where(p => AttributeStore.IsPublic(p) && !p.GetIndexParameters().Any());
+			if (instance != null) {
+				var properties = instance.GetType().GetRuntimeProperties().Where(p => AttributeStore.IsPublic(p) && !p.GetIndexParameters().Any());
 
-			foreach (var property in properties) {
-				GetMutatedProperty<T, object>(context, property, true);
+				foreach (var property in properties) {
+					GetMutatedProperty<T, object>(context, property, true);
+				}
 			}
 
 			// Step 2: Mutate the object's mutation attributes
