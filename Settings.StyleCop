@@ -4,6 +4,7 @@
 		<CollectionProperty Name="RecognizedWords">
 			<Value>abc</Value>
 			<Value>metacharacter</Value>
+			<Value>xyz</Value>
 		</CollectionProperty>
 	</GlobalSettings>
 	<Analyzers>
