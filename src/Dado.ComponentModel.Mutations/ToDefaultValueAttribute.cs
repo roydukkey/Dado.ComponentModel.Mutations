@@ -22,6 +22,12 @@ namespace Dado.ComponentModel.DataMutations
 	[AttributeUsage(AttributeTargets.Property)]
 	public class ToDefaultValueAttribute : MutationAttribute
 	{
+		#region Fields
+		
+		private object _defaultValue;
+
+		#endregion Fields
+
 		#region Constructors
 
 		/// <summary>
@@ -53,6 +59,24 @@ namespace Dado.ComponentModel.DataMutations
 
 		#endregion Properties
 
+		#region Public Methods
+
+		/// <summary>
+		///		Mutates the given value according to this <see cref="MutationAttribute" />.
+		/// </summary>
+		/// <param name="value">The value to mutate.</param>
+		/// <param name="defaultValue">The value to be used instead of the type's default value.</param>
+		/// <param name="context">Describes the <paramref name="value" /> being mutated and provides services and context for mutation.</param>
+		/// <returns>The resulting mutated value.</returns>
+		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is required and <c>null</c>.</exception>
+		public object Mutate(object value, object defaultValue, IMutationContext context = null) {
+			_defaultValue = defaultValue;
+
+			return base.Mutate(value, context);
+		}
+
+		#endregion Public Methods
+
 		#region Protected Methods
 
 		/// <summary>
@@ -63,29 +87,29 @@ namespace Dado.ComponentModel.DataMutations
 		/// <returns>The type's default value when the specified <paramref name="value" /> is in <see cref="Values" />.</returns>
 		protected override object MutateValue(object value, IMutationContext context)
 		{
-			object defaultValue = null;
-
-			if (value != null) {
+			if (_defaultValue == null && value != null) {
 				var type = value.GetType();
 
 				if (type.GetTypeInfo().IsValueType) {
 					// Is there better way to get the default value?
-					defaultValue = Activator.CreateInstance(type);
+					_defaultValue = Activator.CreateInstance(type);
 				}
 			}
 
 			if (Values == null) {
-				if (value == defaultValue || value.Equals(defaultValue)) {
-					value = TryGetAttributeValue(context, defaultValue);
+				if (value == _defaultValue || value.Equals(_defaultValue)) {
+					value = TryGetAttributeValue(context, _defaultValue);
 				}
 			}
 			else {
 				foreach (var testValue in Values) {
 					if (value == testValue || (value != null && value.Equals(testValue))) {
-						value = TryGetAttributeValue(context, defaultValue);
+						value = TryGetAttributeValue(context, _defaultValue);
 					}
 				}
 			}
+
+			_defaultValue = null;
 
 			return value;
 		}

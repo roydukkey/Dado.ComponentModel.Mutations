@@ -40,7 +40,45 @@ If no *Values* are specified, the type's default value will be replaced with the
 | Name | Description |
 | ---- | ----------- |
 | [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute;. |
+| [Mutate(Object, Object, IMutationContext)](#MutateObjectObjectIMutationContext) | Mutates the given value according to this MutationAttribute;. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToDefaultValueAttribute. |
+
+
+<a name='MutateObjectObjectIMutationContext'></a>
+## Mutate(Object, Object, IMutationContext)
+
+Mutates the given value according to this *MutationAttribute*.
+
+#### Syntax
+
+```csharp
+public object Mutate(
+	object value,
+	object defaultValue,
+	IMutationContext context = null
+)
+```
+
+#### Returns
+
+The resulting mutated value.
+
+#### Parameters
+
+<dl>
+	<dt>value</dt>
+	<dd>Type: System.Object<br />The value to mutate.</dd>
+	<dt>defaultValue</dt>
+	<dd>Type: System.Object<br />The value to be used instead of the type's default value.</dd>
+	<dt>context</dt>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+</dl>
+
+#### Exceptions
+
+| Exception | Condition |
+| --------- | --------- |
+| System.ArgumentNullException | When `context` is required and **null**. |
 
 
 <a name='ToDefaultValueAttributeObjectObjectArray'></a>
