@@ -44,7 +44,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <param name="context">Describes the type of object being mutated and provides services and context for mutation.</param>
 		/// <param name="attributes">The list of <see cref="MutationAttribute" />s to modify the specified <paramref name="value" /> against.</param>
 		/// <param name="value">The value to be mutated.</param>
-		/// <returns>The value that has been modified according to any associated <see cref="MutationAttribute" />s and <see cref="IMutableObject" /> implementation.</returns>
+		/// <returns>The value that has been modified according to any associated <see cref="MutationAttribute" />s.</returns>
 		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="attributes" /> is <c>null</c>.</exception>
 		public static T Mutate<T>(this MutationContext<T> context, IEnumerable<MutationAttribute> attributes, T value)

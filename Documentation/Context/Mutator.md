@@ -132,7 +132,7 @@ public static T Mutate<T>(
 
 #### Returns
 
-The value that has been modified according to any associated *MutationAttribute*s and *IMutableObject* implementation.
+The value that has been modified according to any associated *MutationAttribute*s.
 
 #### Parameters
 
