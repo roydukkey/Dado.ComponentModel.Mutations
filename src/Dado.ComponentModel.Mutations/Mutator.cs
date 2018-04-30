@@ -124,7 +124,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <exception cref="ArgumentException">When the <see cref="MemberInfo.Name" /> of <paramref name="context" /> is not a valid property.</exception>
 		public static P MutateProperty<T, P>(this MutationContext<T> context, PropertyInfo property, P value)
 			where T : class
-			=> GetMutatedProperty(context, property, true, value);
+			=> GetMutatedProperty(context, property, false, value);
 
 		/// <summary>
 		///		Mutates the specified property of the instance associated with the current context.
