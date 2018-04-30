@@ -23,14 +23,15 @@ This attribute performs an ordinal (case-sensitive and culture-insensitive) sear
 
 | Name | Description |
 | ---- | ----------- |
-| [ReplaceAttribute(String, String[])](#ReplaceAttributeStringStringArray) | Initializes a new instance of the ReplaceAttribute class. |
+| [ReplaceAttribute(String)](#ReplaceAttributeString) | Initializes a new instance of the ReplaceAttribute class. |
+| [ReplaceAttribute(String[])](#ReplaceAttributeStringArray) | Initializes a new instance of the ReplaceAttribute class. |
 
 
 ### Properties
 
 | Name | Description |
 | ---- | ----------- |
-| [Antecedents](#Antecedents) | Gets the values to replace in a string. |
+| [Antecedents](#Antecedents) | Gets the values to be replaced in a string. |
 | [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [Replacement](#Replacement) | Gets or sets the string to replace all occurrences of the specified Antecedents. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
@@ -44,8 +45,8 @@ This attribute performs an ordinal (case-sensitive and culture-insensitive) sear
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ReplaceAttribute. |
 
 
-<a name='ReplaceAttributeStringStringArray'></a>
-## ReplaceAttribute(String, String[])
+<a name='ReplaceAttributeString'></a>
+## ReplaceAttribute(String)
 
 Initializes a new instance of the *ReplaceAttribute* class.
 
@@ -53,8 +54,7 @@ Initializes a new instance of the *ReplaceAttribute* class.
 
 ```csharp
 public ReplaceAttribute(
-	string antecedent,
-	params string[] additional
+	string antecedent
 )
 ```
 
@@ -62,16 +62,35 @@ public ReplaceAttribute(
 
 <dl>
 	<dt>antecedent</dt>
-	<dd>Type: System.String<br />The string to replace.</dd>
-	<dt>additional</dt>
-	<dd>Type: System.String[]<br />Additional strings to replace.</dd>
+	<dd>Type: System.String<br />The string to be replaced.</dd>
+</dl>
+
+
+<a name='ReplaceAttributeStringArray'></a>
+## ReplaceAttribute(String[])
+
+Initializes a new instance of the *ReplaceAttribute* class.
+
+#### Syntax
+
+```csharp
+public ReplaceAttribute(
+	params string[] antecedents
+)
+```
+
+#### Parameters
+
+<dl>
+	<dt>antecedents</dt>
+	<dd>Type: System.String[]<br />The strings to be replaced.</dd>
 </dl>
 
 
 <a name='Antecedents'></a>
 ## Antecedents
 
-Gets the values to replace in a string.
+Gets the values to be replaced in a string.
 
 #### Syntax
 

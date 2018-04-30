@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Dado.ComponentModel.DataMutations
@@ -27,14 +26,15 @@ namespace Dado.ComponentModel.DataMutations
 		///		Initializes a new instance of the <see cref="RegexReplaceAttribute" /> class.
 		/// </summary>
 		/// <param name="pattern">The regular expression pattern to match.</param>
-		/// <param name="additional">Additional regular expression pattern to match.</param>
-		public RegexReplaceAttribute(string pattern, params string[] additional)
-		{
-			Patterns = new[] { pattern };
+		public RegexReplaceAttribute(string pattern) : this(new[] { pattern }) { }
 
-			if (additional != null) {
-				Patterns = Patterns.Concat(additional);
-			}
+		/// <summary>
+		///		Initializes a new instance of the <see cref="RegexReplaceAttribute" /> class.
+		/// </summary>
+		/// <param name="patterns">The regular expression patterns to match.</param>
+		public RegexReplaceAttribute(params string[] patterns)
+		{
+			Patterns = patterns;
 		}
 
 		#endregion Constructors
@@ -49,7 +49,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets or sets the replacement pattern that will be used to replace each match of the specified <see cref="Patterns" />.
 		/// </summary>
-		public string Replacement { get; set; } = "";
+		public string Replacement { get; set; } = String.Empty;
 
 		/// <summary>
 		///		Gets or sets a bitwise combination of the enumeration values that modify the regular expression.

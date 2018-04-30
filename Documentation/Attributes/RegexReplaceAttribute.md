@@ -23,7 +23,8 @@ The *Replacement* property specifies the string that is to replace each match in
 
 | Name | Description |
 | ---- | ----------- |
-| [RegexReplaceAttribute(String, String[])](#RegexReplaceAttributeStringStringArray) | Initializes a new instance of the RegexReplaceAttribute class. |
+| [RegexReplaceAttribute(String)](#RegexReplaceAttributeString) | Initializes a new instance of the RegexReplaceAttribute class. |
+| [RegexReplaceAttribute(String[])](#RegexReplaceAttributeStringArray) | Initializes a new instance of the RegexReplaceAttribute class. |
 
 
 ### Properties
@@ -45,8 +46,8 @@ The *Replacement* property specifies the string that is to replace each match in
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this RegexReplaceAttribute. |
 
 
-<a name='RegexReplaceAttributeStringStringArray'></a>
-## RegexReplaceAttribute(String, String[])
+<a name='RegexReplaceAttributeString'></a>
+## RegexReplaceAttribute(String)
 
 Initializes a new instance of the *RegexReplaceAttribute* class.
 
@@ -54,8 +55,7 @@ Initializes a new instance of the *RegexReplaceAttribute* class.
 
 ```csharp
 public RegexReplaceAttribute(
-	string pattern,
-	params string[] additional
+	string pattern
 )
 ```
 
@@ -64,8 +64,27 @@ public RegexReplaceAttribute(
 <dl>
 	<dt>pattern</dt>
 	<dd>Type: System.String<br />The regular expression pattern to match.</dd>
-	<dt>additional</dt>
-	<dd>Type: System.String[]<br />Additional regular expression pattern to match.</dd>
+</dl>
+
+
+<a name='RegexReplaceAttributeStringArray'></a>
+## RegexReplaceAttribute(String[])
+
+Initializes a new instance of the *RegexReplaceAttribute* class.
+
+#### Syntax
+
+```csharp
+public RegexReplaceAttribute(
+	string[] patterns
+)
+```
+
+#### Parameters
+
+<dl>
+	<dt>patterns</dt>
+	<dd>Type: System.String[]<br />The regular expression patterns to match.</dd>
 </dl>
 
 

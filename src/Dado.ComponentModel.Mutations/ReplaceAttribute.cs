@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Dado.ComponentModel.DataMutations
 {
@@ -25,15 +24,15 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Initializes a new instance of the <see cref="ReplaceAttribute" /> class.
 		/// </summary>
-		/// <param name="antecedent">The string to replace.</param>
-		/// <param name="additional">Additional strings to replace.</param>
-		public ReplaceAttribute(string antecedent, params string[] additional)
-		{
-			Antecedents = new[] { antecedent };
+		/// <param name="antecedent">The string to be replaced.</param>
+		public ReplaceAttribute(string antecedent) : this(new[] { antecedent }) { }
 
-			if (additional != null) {
-				Antecedents = Antecedents.Concat(additional);
-			}
+		/// <summary>
+		///		Initializes a new instance of the <see cref="ReplaceAttribute" /> class.
+		/// </summary>
+		/// <param name="antecedents">The strings to be replaced.</param>
+		public ReplaceAttribute(params string[] antecedents) {
+			Antecedents = antecedents;
 		}
 
 		#endregion Constructors
@@ -41,7 +40,7 @@ namespace Dado.ComponentModel.DataMutations
 		#region Properties
 
 		/// <summary>
-		///		Gets the values to replace in a string.
+		///		Gets the values to be replaced in a string.
 		/// </summary>
 		public IEnumerable<string> Antecedents { get; }
 
