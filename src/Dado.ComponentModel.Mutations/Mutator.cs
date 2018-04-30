@@ -232,7 +232,7 @@ namespace Dado.ComponentModel.DataMutations
 					property.SetValue(context.ObjectInstance, value);
 				}
 			}
-
+			
 			return value;
 		}
 
@@ -292,23 +292,28 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		Gets the corresponding <see cref="PropertyInfo" /> from an <see cref="Expression" />.
 		/// </summary>
+		/// <typeparam name="T">The base type that contains the target <paramref name="property" />.</typeparam>
+		/// <typeparam name="P">The property type associated with <typeparamref name="T" />.</typeparam>
 		/// <param name="property">The expression that selects the property to get info on.</param>
 		/// <returns>The property info collected from the expression.</returns>
-		private static PropertyInfo GetPropertyInfo(Expression property)
+		/// <exception cref="ArgumentNullException">When <paramref name="property" /> is <c>null</c>.</exception>
+		/// <exception cref="ArgumentException">The expression doesn't indicate a valid property."</exception>
+		private static PropertyInfo GetPropertyInfo<T, P>(Expression<Func<T, P>> property)
 		{
-			if (property is LambdaExpression) {
-				property = ((LambdaExpression)property).Body;
+			if (property == null) {
+				throw new ArgumentNullException(nameof(property));
 			}
 
-			switch (property.NodeType) {
-				case ExpressionType.MemberAccess: {
-					return (PropertyInfo)((MemberExpression)property).Member;
-				}
-
-				default: {
-					throw new ArgumentException($"The expression doesn't indicate a valid property. [ {property} ]");
+			if (property.Body is UnaryExpression unaryExp) {
+				if (unaryExp.Operand is MemberExpression memberExp) {
+					return (PropertyInfo)memberExp.Member;
 				}
 			}
+			else if (property.Body is MemberExpression memberExp) {
+				return (PropertyInfo)memberExp.Member;
+			}
+			
+			throw new ArgumentException($"The expression doesn't indicate a valid property. [ {property} ]");
 		}
 
 		/// <summary>
