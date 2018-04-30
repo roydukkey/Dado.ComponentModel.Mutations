@@ -70,8 +70,10 @@ namespace Dado.ComponentModel.DataMutations
 		{
 			if (value != null && value is string valueAsString) {
 				foreach (string pattern in Patterns) {
-					value = new Regex(pattern, Options).Replace(valueAsString, Replacement);
+					valueAsString = new Regex(pattern, Options).Replace(valueAsString, Replacement);
 				}
+
+				value = valueAsString;
 			}
 
 			return value;

@@ -64,8 +64,10 @@ namespace Dado.ComponentModel.DataMutations
 		{
 			if (value != null && value is string valueAsString) {
 				foreach (string antecedent in Antecedents) {
-					value = valueAsString.Replace(antecedent, Replacement);
+					valueAsString = valueAsString.Replace(antecedent, Replacement);
 				}
+
+				value = valueAsString;
 			}
 
 			return value;
