@@ -31,7 +31,8 @@ namespace Dado.ComponentModel.DataMutations
 		///		Initializes a new instance of the <see cref="ReplaceAttribute" /> class.
 		/// </summary>
 		/// <param name="antecedents">The strings to be replaced.</param>
-		public ReplaceAttribute(params string[] antecedents) {
+		public ReplaceAttribute(params string[] antecedents)
+		{
 			Antecedents = antecedents;
 		}
 

@@ -18,6 +18,7 @@ namespace Dado.ComponentModel.DataMutations
 		public static bool IsSingleFlag(this Enum source)
 		{
 			int value = Convert.ToInt32(source);
+
 			return value != 0 && (value & (value - 1)) == 0;
 		}
 
