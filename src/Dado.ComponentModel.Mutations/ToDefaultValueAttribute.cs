@@ -36,11 +36,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <param name="values">An array of values that should be made default.</param>
 		public ToDefaultValueAttribute(params object[] values)
 		{
-			Values = values == null
-				? new[] { values }
-				: values.Count() == 0
-					? null
-					: values;
+			Values = values;
 		}
 
 		#endregion Constructors

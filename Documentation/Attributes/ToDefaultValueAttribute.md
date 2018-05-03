@@ -98,7 +98,7 @@ public ToDefaultValueAttribute(
 
 <dl>
 	<dt>values</dt>
-	<dd>Type: System.Object[]<br />The values that should be made default.</dd>
+	<dd>Type: System.Object[]<br />An array of values that should be made default.</dd>
 </dl>
 
 
