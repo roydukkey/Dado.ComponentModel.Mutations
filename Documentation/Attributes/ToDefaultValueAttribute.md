@@ -23,7 +23,7 @@ If no *Values* are specified, the type's default value will be replaced with the
 
 | Name | Description |
 | ---- | ----------- |
-| [ToDefaultValueAttribute(Object, Object[])](#ToDefaultValueAttributeObjectObjectArray) | Initializes a new instance of the ToDefaultValueAttribute class. |
+| [ToDefaultValueAttribute(Object[])](#ToDefaultValueAttributeObjectArray) | Initializes a new instance of the ToDefaultValueAttribute class. |
 
 
 ### Properties
@@ -81,8 +81,8 @@ The resulting mutated value.
 | System.ArgumentNullException | When `context` is required and **null**. |
 
 
-<a name='ToDefaultValueAttributeObjectObjectArray'></a>
-## ToDefaultValueAttribute(String, String[])
+<a name='ToDefaultValueAttributeObjectArray'></a>
+## ToDefaultValueAttribute(Object[])
 
 Initializes a new instance of the *ToDefaultValueAttribute* class.
 
@@ -90,18 +90,15 @@ Initializes a new instance of the *ToDefaultValueAttribute* class.
 
 ```csharp
 public ToDefaultValueAttribute(
-	object value,
-	params object[] additional
+	params object[] values
 )
 ```
 
 #### Parameters
 
 <dl>
-	<dt>value</dt>
-	<dd>Type: System.Object<br />The value that should be made default.</dd>
-	<dt>additional</dt>
-	<dd>Type: System.Object[]<br />Additional values to make default.</dd>
+	<dt>values</dt>
+	<dd>Type: System.Object[]<br />The values that should be made default.</dd>
 </dl>
 
 
