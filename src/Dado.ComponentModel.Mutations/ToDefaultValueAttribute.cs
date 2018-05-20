@@ -68,7 +68,7 @@ namespace Dado.ComponentModel.DataMutations
 		public object Mutate(object value, object defaultValue, IMutationContext context = null) {
 			_defaultValue = defaultValue;
 
-			return Mutate(value, context);
+			return base.Mutate(value, context);
 		}
 
 		#endregion Public Methods
