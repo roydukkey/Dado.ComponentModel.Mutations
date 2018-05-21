@@ -94,13 +94,13 @@ namespace Dado.ComponentModel.DataMutations
 
 			if (Values == null) {
 				if (value == _defaultValue || value.Equals(_defaultValue)) {
-					value = TryGetAttributeValue(context, _defaultValue);
+					value = AttributeValue(context) ?? _defaultValue;
 				}
 			}
 			else {
 				foreach (var testValue in Values) {
 					if (value == testValue || (value != null && value.Equals(testValue))) {
-						value = TryGetAttributeValue(context, _defaultValue);
+						value = AttributeValue(context) ?? _defaultValue;
 					}
 				}
 			}
@@ -115,17 +115,12 @@ namespace Dado.ComponentModel.DataMutations
 		#region Private Methods
 
 		/// <summary>
-		///		Tries to determine the default value from a <see cref="DefaultValueAttribute" />.
+		///		Get a default value from an associated <see cref="DefaultValueAttribute" />.
 		/// </summary>
 		/// <param name="context">Describes the value being mutated and provides services and context for mutation.</param>
-		/// <param name="defaultValue">The value to be used when a value is not specified by an attribute.</param>
-		/// <returns>The value of an associated <see cref="DefaultValueAttribute" />, otherwise the value specified by <paramref name="defaultValue" />.</returns>
-		private object TryGetAttributeValue(IMutationContext context, object defaultValue)
-		{
-			var attribute = context?.Attributes.OfType<DefaultValueAttribute>().FirstOrDefault();
-
-			return attribute != null ? attribute.Value : defaultValue;
-		}
+		/// <returns>The value of an associated <see cref="DefaultValueAttribute" />, otherwise <c>null</c>.</returns>
+		private object AttributeValue(IMutationContext context)
+			=> context?.Attributes.OfType<DefaultValueAttribute>().FirstOrDefault()?.Value;
 
 		#endregion Private Methods
 	}
