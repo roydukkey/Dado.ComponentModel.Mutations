@@ -115,7 +115,7 @@ namespace Dado.ComponentModel.DataMutations
 		#region Private Methods
 
 		/// <summary>
-		///		Get a default value from an associated <see cref="DefaultValueAttribute" />.
+		///		Gets the default value from an associated <see cref="DefaultValueAttribute" />.
 		/// </summary>
 		/// <param name="context">Describes the value being mutated and provides services and context for mutation.</param>
 		/// <returns>The value of an associated <see cref="DefaultValueAttribute" />, otherwise <c>null</c>.</returns>
