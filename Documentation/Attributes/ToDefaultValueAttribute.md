@@ -39,8 +39,8 @@ If no *Values* are specified, the type's default value will be replaced with the
 
 | Name | Description |
 | ---- | ----------- |
-| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute;. |
-| [Mutate(Object, Object, IMutationContext)](#MutateObjectObjectIMutationContext) | Mutates the given value according to this MutationAttribute;. |
+| [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
+| [Mutate(Object, Object, IMutationContext)](#MutateObjectObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToDefaultValueAttribute. |
 
 
