@@ -14,14 +14,39 @@ namespace Dado.ComponentModel.DataMutations.Test
 {
 	public class MutatorTests
 	{
+		#region Testing Components
+
+		public class RequiredContextAttribute : MutationAttribute
+		{
+			public override bool RequiresContext { get; protected set; } = true;
+
+			protected override object MutateValue(object value, IMutationContext context)
+				=> value;
+		}
+
+		#endregion Testing Components
+
 		#region Mutate Value
 
 		[Fact]
-		public static void MutateValueThrowsIfContextIsNull()
+		public static void MutateValueThrowsIfContextIsNullWhenRequired()
 		{
-			AssertExtensions.Throws<ArgumentNullException>("context",
-				() => Mutator.Mutate<int>(null, Enumerable.Empty<MutationAttribute>())
+			var exception = Assert.Throws<ArgumentNullException>("context",
+				() => Mutator.Mutate<int>(null, new[] { new RequiredContextAttribute() })
 			);
+			Assert.Equal("A mutation context is required by this mutation attribute.\r\nParameter name: context", exception.Message);
+
+			exception = Assert.Throws<ArgumentNullException>("context",
+				() => Mutator.Mutate(null, new[] { new RequiredContextAttribute() }, 0)
+			);
+			Assert.Equal("A mutation context is required by this mutation attribute.\r\nParameter name: context", exception.Message);
+		}
+
+		[Fact]
+		public static void MutateValueSucceedsIfContextIsNullWhenNotRequired()
+		{
+			Mutator.Mutate<int>(null, new[] { new ToDefaultValueAttribute() });
+			Mutator.Mutate(null, new[] { new ToDefaultValueAttribute() }, 0);
 		}
 
 		[Fact]

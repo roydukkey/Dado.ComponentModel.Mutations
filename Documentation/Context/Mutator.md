@@ -99,7 +99,7 @@ The object whose value and/or properties has been modified according to any asso
 
 | Exception | Condition |
 | --------- | --------- |
-| System.ArgumentNullException | When `context` is **null**. |
+| System.ArgumentNullException | When `T` is a value type, `context` is required, and **null**; or when `context` is **null**. |
 | System.ArgumentNullException | When `attributes` is **null**. |
 
 #### Remarks
@@ -149,7 +149,7 @@ The value that has been modified according to any associated *MutationAttribute*
 
 | Exception | Condition |
 | --------- | --------- |
-| System.ArgumentNullException | When `context` is **null**. |
+| System.ArgumentNullException | When `context` is required and **null**. |
 | System.ArgumentNullException | When `attributes` is **null**. |
 
 

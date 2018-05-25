@@ -30,7 +30,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <param name="context">Describes the type of object being mutated and provides services and context for mutation.</param>
 		/// <param name="attributes">The list of <see cref="MutationAttribute" />s to modify the specified <see cref="MutationContext{T}.ObjectInstance" /> against.</param>
 		/// <returns>The object whose value and/or properties has been modified according to any associated <see cref="MutationAttribute" />s and <see cref="IMutableObject" /> implementation.</returns>
-		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
+		/// <exception cref="ArgumentNullException">When <typeparamref name="T" /> is a value type, <paramref name="context" /> is required, and <c>null</c>; or when <paramref name="context" /> is <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="attributes" /> is <c>null</c>.</exception>
 		public static T Mutate<T>(this MutationContext<T> context, IEnumerable<MutationAttribute> attributes)
 			=> typeof(T).GetTypeInfo().IsValueType
@@ -45,7 +45,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <param name="attributes">The list of <see cref="MutationAttribute" />s to modify the specified <paramref name="value" /> against.</param>
 		/// <param name="value">The value to be mutated.</param>
 		/// <returns>The value that has been modified according to any associated <see cref="MutationAttribute" />s.</returns>
-		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
+		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is required and <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="attributes" /> is <c>null</c>.</exception>
 		public static T Mutate<T>(this MutationContext<T> context, IEnumerable<MutationAttribute> attributes, T value)
 			where T : struct
@@ -171,14 +171,10 @@ namespace Dado.ComponentModel.DataMutations
 		/// <param name="attributes">The list of <see cref="MutationAttribute" />s to modify the specified <paramref name="value" /> against.</param>
 		/// <param name="value">The value to be mutated.</param>
 		/// <returns>The value that has been modified according to any associated <see cref="MutationAttribute" />s and <see cref="IMutableObject" /> implementation.</returns>
-		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is <c>null</c>.</exception>
+		/// <exception cref="ArgumentNullException">When <paramref name="context" /> is required and <c>null</c>.</exception>
 		/// <exception cref="ArgumentNullException">When <paramref name="attributes" /> is <c>null</c>.</exception>
 		private static T GetMutatedValue<T>(IMutationContext context, IEnumerable<MutationAttribute> attributes, T value)
 		{
-			if (context == null) {
-				throw new ArgumentNullException(nameof(context));
-			}
-
 			if (attributes == null) {
 				throw new ArgumentNullException(nameof(attributes));
 			}

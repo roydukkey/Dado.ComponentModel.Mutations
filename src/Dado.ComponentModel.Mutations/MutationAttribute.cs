@@ -16,7 +16,7 @@ namespace Dado.ComponentModel.DataMutations
 		/// <summary>
 		///		A flag indicating the attribute requires a non-null <see cref="MutationContext{T}" /> to perform validation. Base class returns <c>false</c>. Override in child classes as appropriate.
 		/// </summary>
-		public virtual bool RequiresContext => false;
+		public virtual bool RequiresContext { get; protected set; } = false;
 
 		/// <summary>
 		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Base class defaults to <c>10</c>. Override in child classes as appropriate.
@@ -37,7 +37,7 @@ namespace Dado.ComponentModel.DataMutations
 		public object Mutate(object value, IMutationContext context = null)
 		{
 			if (RequiresContext && context == null) {
-				throw new ArgumentNullException(nameof(context));
+				throw new ArgumentNullException(nameof(context), "A mutation context is required by this mutation attribute.");
 			}
 
 			return MutateValue(value, context);
