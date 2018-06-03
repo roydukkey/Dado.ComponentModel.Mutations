@@ -109,5 +109,6 @@ Returns this instance of the *CollectionDescriptor*.
 
 
 ### See Also
-dotnet/csharplang#124
-dotnet/csharplang#343
+
+https://github.com/dotnet/csharplang/issues/124<br />
+https://github.com/dotnet/csharplang/issues/343
