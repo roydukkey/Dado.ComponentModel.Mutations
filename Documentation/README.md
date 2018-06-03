@@ -11,6 +11,8 @@
 ### Attributes
 
 #### Priority 10
+- [ApplyMaxLengthAttribute](Attributes/ApplyMaxLengthAttribute.md 'Dado.ComponentModel.DataMutations.ApplyMaxLengthAttribute')
+  - [CollectionDescriptor](CollectionDescriptor.md 'Dado.ComponentModel.DataMutations.ApplyMaxLengthAttribute.CollectionDescriptor')
 - [MutationAttribute](Attributes/MutationAttribute.md 'Dado.ComponentModel.DataMutations.MutationAttribute')
 - [RegexReplaceAttribute](Attributes/RegexReplaceAttribute.md 'Dado.ComponentModel.DataMutations.RegexReplaceAttribute')
 - [ReplaceAttribute](Attributes/ReplaceAttribute.md 'Dado.ComponentModel.DataMutations.ReplaceAttribute')

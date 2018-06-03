@@ -14,6 +14,10 @@
 		<AssemblyOriginatorKeyFile>..\..\..\_tools\roydukkey.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="System.ComponentModel.Annotations" Version="4.1.0" />
+	</ItemGroup>
+	
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
 		<PackageReference Include="System.ComponentModel" Version="4.0.1" />
 	</ItemGroup>

@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", "{9AA0FD0E-80EF-457B-8BC8-19A3F53FBB98}"
 	ProjectSection(SolutionItems) = preProject
+		Documentation\Attributes\ApplyMaxLengthAttribute.md = Documentation\Attributes\ApplyMaxLengthAttribute.md
 		Documentation\Attributes\MutationAttribute.md = Documentation\Attributes\MutationAttribute.md
 		Documentation\Attributes\RegexReplaceAttribute.md = Documentation\Attributes\RegexReplaceAttribute.md
 		Documentation\Attributes\ReplaceAttribute.md = Documentation\Attributes\ReplaceAttribute.md
@@ -43,7 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{B1EA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dado.ComponentModel.Mutations", "src\Dado.ComponentModel.Mutations\Dado.ComponentModel.Mutations.csproj", "{1461C3FB-E239-43B4-84FD-230B741BF0F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dado.ComponentModel.Mutations.Test", "test\Dado.ComponentModel.Mutations.Test\Dado.ComponentModel.Mutations.Test.csproj", "{667AE136-5CBF-4349-B5EC-B7C0299F164E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dado.ComponentModel.Mutations.Test", "test\Dado.ComponentModel.Mutations.Test\Dado.ComponentModel.Mutations.Test.csproj", "{667AE136-5CBF-4349-B5EC-B7C0299F164E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
