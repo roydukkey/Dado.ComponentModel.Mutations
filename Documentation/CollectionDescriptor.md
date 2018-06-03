@@ -74,7 +74,7 @@ Returns this instance of the *CollectionDescriptor*.
 
 <dl>
 	<dt>mutator</dt>
-	<dd>Type: System.Func&lt;Int32, T, T&gt;<br />The function accepting a length and collection which returns a collection.</dd>
+	<dd>Type: System.Func&lt;System.Int32, `T, `T&gt;<br />The function accepting a length and collection which returns a collection.</dd>
 </dl>
 
 
@@ -104,7 +104,7 @@ Returns this instance of the *CollectionDescriptor*.
 
 <dl>
 	<dt>mutator</dt>
-	<dd>Type: System.Func&lt;Int32, ICollection&lt;T&gt;, ICollection&lt;T&gt;&gt;<br />The function accepting a length and collection which returns a collection.</dd>
+	<dd>Type: System.Func&lt;System.Int32, System.Collections.Generic.ICollection&lt;`T&gt;, System.Collections.Generic.ICollection&lt;`T&gt;&gt;<br />The function accepting a length and collection which returns a collection.</dd>
 </dl>
 
 

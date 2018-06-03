@@ -65,7 +65,7 @@ Initializes a new instance of the *ApplyMaxLengthAttribute* class.
 
 ```csharp
 protected ApplyMaxLengthAttribute(
-	Dado.ComponentModel.DataMutations.ApplyMaxLengthAttribute.CollectionDescriptor descriptor
+	CollectionDescriptor descriptor
 )
 ```
 
@@ -73,7 +73,7 @@ protected ApplyMaxLengthAttribute(
 
 <dl>
 	<dt>descriptor</dt>
-	<dd>Type: ApplyMaxLengthAttribute.CollectionDescriptor<br />Describe a collection should be mutated.</dd>
+	<dd>Type: Dado.ComponentModel.DataMutations.ApplyMaxLengthAttribute.CollectionDescriptor<br />Describe a collection should be mutated.</dd>
 </dl>
 
 
