@@ -50,12 +50,12 @@ public CultureInfo CultureInfo { get; set; }
 <a name='Priority'></a>
 ## Priority
 
-Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `30`.
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `40`.
 
 #### Syntax
 
 ```csharp
-public override int Priority { get; set; } = 30;
+public override int Priority { get; set; } = 40;
 ```
 
 <dl>

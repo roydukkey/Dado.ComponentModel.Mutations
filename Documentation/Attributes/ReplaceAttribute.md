@@ -32,7 +32,7 @@ This attribute performs an ordinal (case-sensitive and culture-insensitive) sear
 | Name | Description |
 | ---- | ----------- |
 | [Antecedents](#Antecedents) | Gets the values to be replaced in a string. |
-| [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [Replacement](#Replacement) | Gets or sets the string to replace all occurrences of the specified Antecedents. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
@@ -101,6 +101,23 @@ public IEnumerable<string> Antecedents { get; private set; }
 <dl>
 	<dt>Type</dt>
 	<dd>System.Collections.Generic.IEnumerable&lt;System.String&gt;</dd>
+</dl>
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `20`.
+
+#### Syntax
+
+```csharp
+public override int Priority { get; set; } = 20;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
 </dl>
 
 

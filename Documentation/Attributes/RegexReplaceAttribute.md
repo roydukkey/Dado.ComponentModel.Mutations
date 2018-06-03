@@ -33,7 +33,7 @@ The *Replacement* property specifies the string that is to replace each match in
 | ---- | ----------- |
 | [Options](#Options) | Gets or sets a bitwise combination of the enumeration values that modify the regular expression. |
 | [Patterns](#Patterns) | Gets the regular expression pattern to match in a string. |
-| [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [Replacement](#Replacement) | Gets or sets the replacement pattern that will be used to replace each match of the specified Patterns. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
@@ -119,6 +119,23 @@ public IEnumerable<string> Patterns { get; private set; }
 <dl>
 	<dt>Type</dt>
 	<dd>System.Collections.Generic.IEnumerable&lt;System.String&gt;</dd>
+</dl>
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `20`.
+
+#### Syntax
+
+```csharp
+public override int Priority { get; set; } = 20;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
 </dl>
 
 

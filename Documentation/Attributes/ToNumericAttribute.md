@@ -19,7 +19,7 @@ public class ToNumericAttribute : MutationAttribute
 | ---- | ----------- |
 | [PreserveFloatingPoint](#PreserveFloatingPoint) | Gets or sets a value indicating whether a floating point indication (.) should be preserved during mutation. |
 | [PreserveSign](#PreserveSign) | Gets or sets a value indicating whether a sign indication (±) should be preserved during mutation. |
-| [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
+| [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
 | [RequiresContext](MutationAttribute.md#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
 
 
@@ -61,6 +61,23 @@ public bool PreserveSign { get; set; }
 <dl>
 	<dt>Type</dt>
 	<dd>System.Boolean</dd>
+</dl>
+
+
+<a name='Priority'></a>
+## Priority
+
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `20`.
+
+#### Syntax
+
+```csharp
+public override int Priority { get; set; } = 20;
+```
+
+<dl>
+	<dt>Type</dt>
+	<dd>System.Integer</dd>
 </dl>
 
 

@@ -56,6 +56,11 @@ namespace Dado.ComponentModel.DataMutations
 		/// </summary>
 		public RegexOptions Options { get; set; }
 
+		/// <summary>
+		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>20</c>.
+		/// </summary>
+		public override int Priority { get; set; } = 20;
+
 		#endregion Properties
 
 		#region Protected Methods

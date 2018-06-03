@@ -69,9 +69,9 @@ namespace Dado.ComponentModel.DataMutations
 		public TrimOptions Direction { get; set; }
 
 		/// <summary>
-		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>30</c>.
+		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>40</c>.
 		/// </summary>
-		public override int Priority { get; set; } = 30;
+		public override int Priority { get; set; } = 40;
 
 		#endregion Properties
 

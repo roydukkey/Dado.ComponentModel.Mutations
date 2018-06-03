@@ -14,14 +14,16 @@
 - [ApplyMaxLengthAttribute](Attributes/ApplyMaxLengthAttribute.md 'Dado.ComponentModel.DataMutations.ApplyMaxLengthAttribute')
   - [CollectionDescriptor](CollectionDescriptor.md 'Dado.ComponentModel.DataMutations.ApplyMaxLengthAttribute.CollectionDescriptor')
 - [MutationAttribute](Attributes/MutationAttribute.md 'Dado.ComponentModel.DataMutations.MutationAttribute')
+
+#### Priority 20
 - [RegexReplaceAttribute](Attributes/RegexReplaceAttribute.md 'Dado.ComponentModel.DataMutations.RegexReplaceAttribute')
 - [ReplaceAttribute](Attributes/ReplaceAttribute.md 'Dado.ComponentModel.DataMutations.ReplaceAttribute')
 - [ToNumericAttribute](Attributes/ToNumericAttribute.md 'Dado.ComponentModel.DataMutations.ToNumericAttribute')
 
-#### Priority 20
+#### Priority 30
 - [ToNullStringAttribute](Attributes/ToNullStringAttribute.md 'Dado.ComponentModel.DataMutations.ToNullStringAttribute')
 
-#### Priority 30
+#### Priority 40
 - [ToLowerAttribute](Attributes/ToLowerAttribute.md 'Dado.ComponentModel.DataMutations.ToLowerAttribute')
 - [ToUpperAttribute](Attributes/ToUpperAttribute.md 'Dado.ComponentModel.DataMutations.ToUpperAttribute')
 - [TrimAttribute](Attributes/TrimAttribute.md 'Dado.ComponentModel.DataMutations.TrimAttribute')

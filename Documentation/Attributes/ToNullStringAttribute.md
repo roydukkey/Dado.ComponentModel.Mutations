@@ -32,12 +32,12 @@ public class ToNullStringAttribute : MutationAttribute
 <a name='Priority'></a>
 ## Priority
 
-Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `20`.
+Gets or sets a value indicating the priority that determines the order in which *MutationAttributes* are evaluated. Defaults to `30`.
 
 #### Syntax
 
 ```csharp
-public override int Priority { get; set; } = 20;
+public override int Priority { get; set; } = 30;
 ```
 
 <dl>

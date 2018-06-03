@@ -15,9 +15,9 @@ namespace Dado.ComponentModel.DataMutations
 		#region Properties
 
 		/// <summary>
-		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>20</c>.
+		///		Gets or sets a value indicating the priority that determines the order in which <see cref="MutationAttribute" />s are evaluated. Defaults to <c>30</c>.
 		/// </summary>
-		public override int Priority { get; set; } = 20;
+		public override int Priority { get; set; } = 30;
 
 		#endregion Properties
 
