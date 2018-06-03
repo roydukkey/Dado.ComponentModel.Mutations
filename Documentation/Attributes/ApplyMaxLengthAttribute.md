@@ -40,7 +40,7 @@ Expect *ApplyMaxLengthAttribute.CollectionDescriptor* to be obsolete once generi
 | Name | Description |
 | ---- | ----------- |
 | [Mutate(Object, IMutationContext)](MutationAttribute.md#MutateObjectIMutationContext) | Mutates the given value according to this MutationAttribute. |
-| [Mutate(Object, Integer)](#MutateObjectInteger) | Mutates the given value according to this MutationAttribute. |
+| [Mutate(Object, Int32)](#MutateObjectInt32) | Mutates the given value according to this MutationAttribute. |
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToDefaultValueAttribute. |
 
 
@@ -94,8 +94,8 @@ public override bool RequiresContext { get; protected set; } = true;
 </dl>
 
 
-<a name='MutateObjectInteger'></a>
-## Mutate(Object, Integer)
+<a name='MutateObjectInt32'></a>
+## Mutate(Object, Int32)
 
 Mutates the given value according to this *MutationAttribute*.
 
@@ -118,7 +118,7 @@ The resulting mutated value.
 	<dt>value</dt>
 	<dd>Type: System.Object<br />The value to mutate.</dd>
 	<dt>maximumLength</dt>
-	<dd>Type: System.Integer<br />The maximum allowable length to apply to the string data.</dd>
+	<dd>Type: System.Int32<br />The maximum allowable length to apply to the string data.</dd>
 </dl>
 
 

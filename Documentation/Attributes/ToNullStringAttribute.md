@@ -42,7 +42,7 @@ public override int Priority { get; set; } = 30;
 
 <dl>
 	<dt>Type</dt>
-	<dd>System.Integer</dd>
+	<dd>System.Int32</dd>
 </dl>
 
 

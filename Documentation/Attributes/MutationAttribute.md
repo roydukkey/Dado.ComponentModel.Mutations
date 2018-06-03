@@ -41,7 +41,7 @@ public virtual int Priority { get; set; } = 10;
 
 <dl>
 	<dt>Type</dt>
-	<dd>System.Integer</dd>
+	<dd>System.Int32</dd>
 </dl>
 
 

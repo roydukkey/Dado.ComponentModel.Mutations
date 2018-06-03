@@ -78,7 +78,7 @@ public override int Priority { get; set; } = 50;
 
 <dl>
 	<dt>Type</dt>
-	<dd>System.Integer</dd>
+	<dd>System.Int32</dd>
 </dl>
 
 

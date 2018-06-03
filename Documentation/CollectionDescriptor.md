@@ -26,8 +26,8 @@ This class will likely be obsolete once generics or lambdas are implemented for 
 
 | Name | Description |
 | ---- | ----------- |
-| [SetCollectionMutator&lt;T&gt;(Func&lt;Integer, T, T&gt;)](#SetCollectionMutatorFunc) | Sets the CollectionMutator for an ICollection. |
-| [SetGenericCollectionMutator&lt;T&gt;(Func&lt;Integer, ICollection&lt;T&gt;, ICollection&lt;T&gt;&gt;)](#SetGenericCollectionMutatorFunc) | Sets the CollectionMutator for a generic ICollection&lt;T&gt;. |
+| [SetCollectionMutator&lt;T&gt;(Func&lt;Int32, T, T&gt;)](#SetCollectionMutatorFunc) | Sets the CollectionMutator for an ICollection. |
+| [SetGenericCollectionMutator&lt;T&gt;(Func&lt;Int32, ICollection&lt;T&gt;, ICollection&lt;T&gt;&gt;)](#SetGenericCollectionMutatorFunc) | Sets the CollectionMutator for a generic ICollection&lt;T&gt;. |
 
 
 <a name='CollectionMutator'></a>
@@ -43,12 +43,12 @@ public Func<int, IEnumerable, IEnumerable> CollectionMutator { get; private set;
 
 <dl>
 	<dt>Type</dt>
-	<dd>System.Func&lt;Integer, IEnumerable, IEnumerable&gt;</dd>
+	<dd>System.Func&lt;Int32, IEnumerable, IEnumerable&gt;</dd>
 </dl>
 
 
 <a name='SetCollectionMutatorFunc'></a>
-## SetCollectionMutator&lt;T&gt;(Func&lt;Integer, T, T&gt;)
+## SetCollectionMutator&lt;T&gt;(Func&lt;Int32, T, T&gt;)
 
 Sets the *CollectionMutator* for an *ICollection*.
 
@@ -74,12 +74,12 @@ Returns this instance of the *CollectionDescriptor*.
 
 <dl>
 	<dt>mutator</dt>
-	<dd>Type: System.Func&lt;Integer, T, T&gt;<br />The function accepting a length and collection which returns a collection.</dd>
+	<dd>Type: System.Func&lt;Int32, T, T&gt;<br />The function accepting a length and collection which returns a collection.</dd>
 </dl>
 
 
 <a name='SetGenericCollectionMutatorFunc'></a>
-## SetGenericCollectionMutator&lt;T&gt;(Func&lt;Integer, ICollection&lt;T&gt;, ICollection&lt;T&gt;&gt;)
+## SetGenericCollectionMutator&lt;T&gt;(Func&lt;Int32, ICollection&lt;T&gt;, ICollection&lt;T&gt;&gt;)
 
 Sets the *CollectionMutator* for a generic *ICollection&lt;T&gt;*.
 
@@ -104,7 +104,7 @@ Returns this instance of the *CollectionDescriptor*.
 
 <dl>
 	<dt>mutator</dt>
-	<dd>Type: System.Func&lt;Integer, ICollection&lt;T&gt;, ICollection&lt;T&gt;&gt;<br />The function accepting a length and collection which returns a collection.</dd>
+	<dd>Type: System.Func&lt;Int32, ICollection&lt;T&gt;, ICollection&lt;T&gt;&gt;<br />The function accepting a length and collection which returns a collection.</dd>
 </dl>
 
 
