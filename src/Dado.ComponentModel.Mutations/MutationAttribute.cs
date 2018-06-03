@@ -14,7 +14,7 @@ namespace Dado.ComponentModel.DataMutations
 		#region Properties
 
 		/// <summary>
-		///		A flag indicating the attribute requires a non-null <see cref="MutationContext{T}" /> to perform validation. Base class returns <c>false</c>. Override in child classes as appropriate.
+		///		A flag indicating the attribute requires a non-null <see cref="IMutationContext" /> to perform validation. Base class returns <c>false</c>. Override in child classes as appropriate.
 		/// </summary>
 		public virtual bool RequiresContext { get; protected set; } = false;
 

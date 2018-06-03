@@ -32,7 +32,7 @@ Expect *ApplyMaxLengthAttribute.CollectionDescriptor* to be obsolete once generi
 | Name | Description |
 | ---- | ----------- |
 | [Priority](MutationAttribute.md#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
-| [RequiresContext](#RequiresContext) | A flag indicating the attribute requires a non-null MutationContext&lt;T&gt; to perform validation. |
+| [RequiresContext](#RequiresContext) | A flag indicating the attribute requires a non-null IMutationContext to perform validation. |
 
 
 ### Methods
@@ -80,7 +80,7 @@ protected ApplyMaxLengthAttribute(
 <a name='RequiresContext'></a>
 ## RequiresContext
 
-A flag indicating the attribute requires a non-null *MutationContext&lt;T&gt;* to perform validation. Returns `true`.
+A flag indicating the attribute requires a non-null *IMutationContext* to perform validation. Returns `true`.
 
 #### Syntax
 
