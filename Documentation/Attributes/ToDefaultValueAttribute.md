@@ -44,43 +44,6 @@ If no *Values* are specified, the type's default value will be replaced with the
 | [MutateValue(Object, IMutationContext)](#MutateValueObjectIMutationContext) | Implements the mutation logic for this ToDefaultValueAttribute. |
 
 
-<a name='MutateObjectObjectIMutationContext'></a>
-## Mutate(Object, Object, IMutationContext)
-
-Mutates the given value according to this *MutationAttribute*.
-
-#### Syntax
-
-```csharp
-public object Mutate(
-	object value,
-	object defaultValue,
-	IMutationContext context = null
-)
-```
-
-#### Returns
-
-The resulting mutated value.
-
-#### Parameters
-
-<dl>
-	<dt>value</dt>
-	<dd>Type: System.Object<br />The value to mutate.</dd>
-	<dt>defaultValue</dt>
-	<dd>Type: System.Object<br />The value to be used instead of the type's default value.</dd>
-	<dt>context</dt>
-	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
-</dl>
-
-#### Exceptions
-
-| Exception | Condition |
-| --------- | --------- |
-| System.ArgumentNullException | When `context` is required and **null**. |
-
-
 <a name='ToDefaultValueAttributeObjectArray'></a>
 ## ToDefaultValueAttribute(Object[])
 
@@ -134,6 +97,43 @@ public IEnumerable<object> Values { get; private set; }
 	<dt>Type</dt>
 	<dd>System.Collections.Generic.IEnumerable&lt;System.Object&gt;</dd>
 </dl>
+
+
+<a name='MutateObjectObjectIMutationContext'></a>
+## Mutate(Object, Object, IMutationContext)
+
+Mutates the given value according to this *MutationAttribute*.
+
+#### Syntax
+
+```csharp
+public object Mutate(
+	object value,
+	object defaultValue,
+	IMutationContext context = null
+)
+```
+
+#### Returns
+
+The resulting mutated value.
+
+#### Parameters
+
+<dl>
+	<dt>value</dt>
+	<dd>Type: System.Object<br />The value to mutate.</dd>
+	<dt>defaultValue</dt>
+	<dd>Type: System.Object<br />The value to be used instead of the type's default value.</dd>
+	<dt>context</dt>
+	<dd>Type: Dado.ComponentModel.DataMutations.IMutationContext<br />Describes the <code>value</code> being mutated and provides services and context for mutation.</dd>
+</dl>
+
+#### Exceptions
+
+| Exception | Condition |
+| --------- | --------- |
+| System.ArgumentNullException | When `context` is required and **null**. |
 
 
 <a name='MutateValueObjectIMutationContext'></a>
