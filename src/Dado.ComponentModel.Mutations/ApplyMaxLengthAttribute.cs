@@ -90,7 +90,7 @@ namespace Dado.ComponentModel.DataMutations
 		{
 			if (value != null) {
 				if (
-					value is string valueAsString &&
+					_descriptor == null && value is string valueAsString &&
 					(
 						_maximumLength > -1 || TryGetStringLengthOrMaxLengthAttributeValue(context, out _maximumLength)
 					) &&
@@ -99,7 +99,7 @@ namespace Dado.ComponentModel.DataMutations
 					value = valueAsString.Substring(0, _maximumLength);
 				}
 				else if (
-					_descriptor != null && value is ICollection valueAsCollection &&
+					value is ICollection valueAsCollection &&
 					(
 						_maximumLength > -1 || TryGetMaxLengthAttributeValue(context, out _maximumLength)
 					) &&
