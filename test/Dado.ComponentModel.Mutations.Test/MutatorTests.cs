@@ -34,12 +34,12 @@ namespace Dado.ComponentModel.DataMutations.Test
 			var exception = Assert.Throws<ArgumentNullException>("context",
 				() => Mutator.Mutate<int>(null, new[] { new RequiredContextAttribute() })
 			);
-			Assert.Equal("A mutation context is required by this mutation attribute.\r\nParameter name: context", exception.Message);
+			Assert.Equal($"A mutation context is required by this mutation attribute.{Environment.NewLine}Parameter name: context", exception.Message);
 
 			exception = Assert.Throws<ArgumentNullException>("context",
 				() => Mutator.Mutate(null, new[] { new RequiredContextAttribute() }, 0)
 			);
-			Assert.Equal("A mutation context is required by this mutation attribute.\r\nParameter name: context", exception.Message);
+			Assert.Equal($"A mutation context is required by this mutation attribute.{Environment.NewLine}Parameter name: context", exception.Message);
 		}
 
 		[Fact]
