@@ -17,7 +17,7 @@ public abstract class MutationAttribute : Attribute
 | Name | Description |
 | ---- | ----------- |
 | [Priority](#Priority) | Gets or sets a value indicating the priority that determines the order in which MutationAttributes are evaluated. |
-| [RequiresContext](#RequiresContext) | A flag indicating the attribute requires a non-null IMutationContext to perform validation. |
+| [RequiresContext](#RequiresContext) | Gets or sets a value indicating whether the attribute requires a non-null IMutationContext to perform validation. |
 
 
 ### Methods
@@ -48,7 +48,7 @@ public virtual int Priority { get; set; } = 10;
 <a name='RequiresContext'></a>
 ## RequiresContext
 
-A flag indicating the attribute requires a non-null *IMutationContext* to perform validation. Base class returns `false`. Override in child classes as appropriate.
+Gets or sets a value indicating whether the attribute requires a non-null *IMutationContext* to perform validation. Base class returns `false`. Override in child classes as appropriate.
 
 #### Syntax
 

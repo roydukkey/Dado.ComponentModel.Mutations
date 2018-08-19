@@ -173,7 +173,7 @@ namespace Dado.ComponentModel.DataMutations
 			#region Properties
 
 			/// <summary>
-			///		A function accepting a length and collection which returns a collection.
+			///		Gets a function accepting a length and collection which returns a collection.
 			/// </summary>
 			public Func<int, IEnumerable, IEnumerable> CollectionMutator { get; private set; }
 

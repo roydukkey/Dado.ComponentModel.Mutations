@@ -19,7 +19,7 @@ This class will likely be obsolete once generics or lambdas are implemented for 
 
 | Name | Description |
 | ---- | ----------- |
-| [CollectionMutator](#CollectionMutator) | A function accepting a length and collection which returns a collection. |
+| [CollectionMutator](#CollectionMutator) | Gets a function accepting a length and collection which returns a collection. |
 
 
 ### Methods
@@ -33,7 +33,7 @@ This class will likely be obsolete once generics or lambdas are implemented for 
 <a name='CollectionMutator'></a>
 ## CollectionMutator
 
-A function accepting a length and collection which returns a collection.
+Gets a function accepting a length and collection which returns a collection.
 
 #### Syntax
 
