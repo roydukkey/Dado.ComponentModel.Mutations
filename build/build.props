@@ -13,7 +13,7 @@
 		<RepositoryType>git</RepositoryType>
 
 		<VersionMajor Condition="'$(VersionMajor)' == ''">0</VersionMajor>
-		<VersionMinor Condition="'$(VersionMinor)' == ''">4</VersionMinor>
+		<VersionMinor Condition="'$(VersionMinor)' == ''">5</VersionMinor>
 		<VersionPatch Condition="'$(VersionPatch)' == ''">0</VersionPatch>
 		<VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
 
