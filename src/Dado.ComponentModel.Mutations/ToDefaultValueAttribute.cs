@@ -92,7 +92,7 @@ namespace Dado.ComponentModel.DataMutations
 				}
 			}
 
-			if (Values == null) {
+			if (Values.Count() <= 0) {
 				if (value == _defaultValue || value.Equals(_defaultValue)) {
 					value = AttributeValue(context) ?? _defaultValue;
 				}

@@ -11,6 +11,9 @@ namespace Dado.ComponentModel.DataMutations.Test
 
 	public class ToDefaultValueTestClass
 	{
+		[ToDefaultValue, DefaultValue(10)]
+		public int DefaultIntegerTo10 { get; set; }
+
 		[ToDefaultValue(1), DefaultValue(10)]
 		public int Integer1To10 { get; set; } = 1;
 
@@ -73,6 +76,7 @@ namespace Dado.ComponentModel.DataMutations.Test
 			var derivedClass = new ToDefaultValueTestClass();
 			var context = new MutationContext<ToDefaultValueTestClass>(derivedClass);
 
+			Assert.Equal(10, context.MutateProperty(x => x.DefaultIntegerTo10));
 			Assert.Equal(10, context.MutateProperty(x => x.Integer1To10));
 			Assert.Equal(3D, context.MutateProperty(x => x.Double2Dto3D));
 			Assert.Equal(4F, context.MutateProperty(x => x.Float3Fto4F));
